@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thadeu Cavalcanti | Certificados</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="header"></div>
+            <main class="certificados">
+                <section class="intro-cert">
+                    <h2>Meus Certificados</h2>
+                    <p>Aqui estão alguns reconhecimentos e conquistas acadêmicas e extracurriculares dos quais me orgulho.</p>
+                </section>
+
+                <section class="cert-grid">
+                    <div class="cert-card">
+                        <img src="imagens/pamun.jpg" alt="PAMUN - Best Delegate">
+                        <h3>PAMUN</h3>
+                        <p>Prêmio de Best Delegate no comitê de Desenvolvimento Tecnológico.</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="imagens/nhsmun.jpg" alt="NHSMUN - Excellence, Merits, Honors">
+                        <h3>NHSMUN</h3>
+                        <p>Reconhecimentos: Excellence, Merits, Honors e Best Research Paper.</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="imagens/sustentabilidade.jpg" alt="Projeto de Sustentabilidade - Melhor grupo">
+                        <h3>PUC-Rio - Projeto de Sustentabilidade</h3>
+                        <p>Reconhecimento como melhor grupo da turma pelo projeto de aerogerador sustentável.</p>
+                    </div>
+
+                    <div class="cert-card no-image">
+                        <h3>Certificado em breve</h3>
+                        <p>Certificado não localizado no momento, mas será adicionado futuramente.</p>
+                    </div>
+                </section>
+            </main>
+            <div id="footer"></div>
+        </div>
+        <script>
+            async function loadComponent(id, file) {
+                const res = await fetch(file);
+                const html = await res.text();
+                document.getElementById(id).innerHTML = html;
+            }
+
+            loadComponent("header", "componentes/header.html");
+            loadComponent("footer", "componentes/footer.html");
+        </script>
+    </body>
+</html>

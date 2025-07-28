@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thadeu Cavalcanti | Sobre Mim</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="header"></div>
+            <main class="sobre-mim">
+                <section>
+                    <h2>Quem sou eu?</h2>
+                    <p>
+                        Olá! Eu sou o Thadeu Cavalcanti, estudante de Engenharia da Computação na PUC-Rio.
+                        Desde pequeno, sempre fui curioso em entender como as coisas funcionam, e essa curiosidade acabou virando uma paixão por tecnologia e inovação.
+                        Gosto de unir a lógica da programação com a criatividade do design para criar soluções funcionais e com propósito.
+                    </p>
+                </section>
+                <section>
+                    <h2>O que me motiva?</h2>
+                    <p>
+                        Me interesso especialmente por Internet das Coisas (IoT), onde posso combinar eletrônica e software de maneira eficiente.
+                        Também tenho curiosidade em Inteligência Artificial e Blockchain, e busco formas práticas de aplicar essas tecnologias em projetos reais.
+                        Gosto de trabalhar em equipe, compartilhar conhecimento e me envolver em projetos que desafiem tanto meu raciocínio quanto minha criatividade.
+                    </p>
+                </section>
+                <section>
+                    <h2>O que estou fazendo e o que busco?</h2>
+                    <p>
+                        Atualmente, sou monitor de programação em C na PUC-Rio e participo de projetos práticos em disciplinas da universidade.
+                        Também estou criando meu portfólio pessoal e organizando os projetos dos quais mais me orgulho.
+                        Quero continuar crescendo como desenvolvedor, aprofundando meus conhecimentos e participando de iniciativas que tenham impacto real. 
+                    </p>
+                </section>
+            </main>
+            <div id="footer"></div>
+        </div>
+
+        <script>
+            async function loadComponent(id, file) {
+                const res = await fetch(file);
+                const html = await res.text();
+                document.getElementById(id).innerHTML = html;
+            }
+
+            loadComponent("header", "componentes/header.html");
+            loadComponent("footer", "componentes/footer.html");
+        </script>
+
+    </body>
+</html>

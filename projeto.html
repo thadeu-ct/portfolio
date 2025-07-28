@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thadeu Cavalcanti | Projetos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="header"></div>
+
+      <main class="projetos">
+        <h2>Meus Projetos</h2>
+
+        <!-- Projeto 1 (imagem à esquerda) -->
+        <section class="projeto projeto-esquerda">
+          <img src="imagens/aerogerador.png" alt="Projeto Aerogerador" class="img-projetos"/>
+          <div class="projeto-info">
+            <h3>Ventos da Mudança</h3>
+            <p>
+              Projeto universitário voltado para geração de energia limpa. Utiliza materiais recicláveis e conceitos de engenharia para otimizar a produção de energia eólica.
+            </p>
+            <a href="projetos/aerogerador.html" class="saiba-mais">Saiba mais...</a>
+          </div>
+        </section>
+
+        <!-- Projeto 2 (imagem à direita) -->
+        <section class="projeto projeto-direita">
+            <img src="imagens/projeto2.jpg" alt="Imagem do Projeto 2" />
+            <div class="projeto-info">
+                <h3>[Nome do Projeto]</h3>
+                <p>
+                    Breve descrição do projeto, explicando seu propósito, tecnologias utilizadas e aprendizados envolvidos.
+                </p>
+                <a href="projetos/nome-do-projeto.html" class="saiba-mais">Saiba mais...</a>
+            </div>
+        </section>
+
+        <!-- Adicione mais projetos seguindo o padrão -->
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <script>
+      async function loadComponent(id, file) {
+        const res = await fetch(file);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      }
+
+      loadComponent("header", "componentes/header.html");
+      loadComponent("footer", "componentes/footer.html");
+    </script>
+  </body>
+</html>
