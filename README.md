@@ -6,16 +6,10 @@ Este repositório contém o código-fonte do meu portfólio pessoal, desenvolvid
 [https://thadeu-ct.github.io/portfolio](https://thadeu-ct.github.io/portfolio)
 
 ## 📁 Estrutura do projeto
-/
-├── index.html
-├── style.css
-├── projetos.html
-├── certificados.html
-├── sobre_mim.html
-├── componentes/
-│ ├── header.html
-│ └── footer.html
-└── imagens/
+- `index.html`, `style.css`, `projetos.html`, `certificados.html`, `sobre_mim.html`
+- `/componentes`: partes reutilizáveis como header e footer
+- `/imagens`: recursos visuais do site
+- `/arquivos`: currículos, certificados e outros para download (em breve)
 
 ## 📌 Sobre
 O site foi criado de forma responsiva e modular, com componentes reutilizáveis e foco em clareza visual. Ainda em evolução, ele será atualizado com novos projetos e funcionalidades.
