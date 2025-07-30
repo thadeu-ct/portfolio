@@ -3,7 +3,7 @@
 Este repositório contém o código-fonte do meu portfólio pessoal, desenvolvido com HTML, CSS e JavaScript. O objetivo é apresentar meus projetos, experiências acadêmicas, currículo e interesses na área de tecnologia e design funcional.
 
 ## 🔗 Acesse o site
-[https://github.com/thadeu-ct/portfolio](https://github.com/thadeu-ct/portfolio)
+[https://thadeu-ct.github.io/portfolio](https://thadeu-ct.github.io/portfolio)
 
 ## 📁 Estrutura do projeto
 - `index.html`, `style.css`, `projetos.html`, `certificados.html`, `sobre_mim.html`
