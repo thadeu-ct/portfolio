@@ -211,6 +211,34 @@ main{
   color: #cbd5e1;
 }
 
+@media screen and (max-width: 768px) {
+  .intro {
+    margin: 5dvh 1.5rem 0 1.5rem;
+    text-align: center;
+  }
+
+  .intro h1,
+  .intro p {
+    max-width: 100%;
+  }
+
+  .photo-wrapper {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 2rem auto;
+    width: 220px;
+    z-index: 0;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 6dvh 1rem 3rem;
+  }
+}
+
 
 /* ==================== */
 /*       PROJETOS       */
