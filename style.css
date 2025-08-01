@@ -212,54 +212,19 @@ main{
 }
 
 @media screen and (max-width: 768px) {
-  /* Intro */
-  .intro {
-    margin: 5dvh 1.5rem 0 1.5rem;
-    text-align: center;
-    z-index: 1;
-  }
-
-  .intro h1,
-  .intro p {
-    max-width: 100%;
-  }
-
-  /* Foto de perfil */
-  .photo-wrapper {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin: 2rem auto;
-    width: 220px;
-    z-index: 0;
-  }
-
-  /* Cards */
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 6dvh 1rem 3rem;
-  }
-
-  .card {
-    width: 90%;
-    padding: 1.5rem;
-  }
-
-  /* Header e Logo */
   .header {
-    position: relative;
-    z-index: 10;
-    padding: 1rem;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 1rem;
+    background-color: #0a0a23;
+    z-index: 1000;
+    position: relative;
   }
 
   .logo {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 0.5rem;
   }
 
@@ -269,45 +234,86 @@ main{
   }
 
   .logo span {
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #e2e8f0;
   }
 
-  /* Navbar */
   .navbar {
-    width: 100%;
     background-color: #0a0a23;
-    border-top: 1px solid rgba(0,195,255,0.2);
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: center;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 999;
   }
 
   .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    max-width: 90%;
   }
 
   .navbar li a {
     color: #e2e8f0;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 0.4rem 1rem;
     border-radius: 8px;
     transition: background-color 0.3s ease;
   }
 
   .navbar li a:hover {
-    background-color: rgba(0, 195, 255, 0.1);
+    background-color: rgba(0, 195, 255, 0.15);
+  }
+
+  .intro {
+    margin: 4dvh 1.5rem 0 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro h1,
+  .intro p {
+    max-width: 100%;
+  }
+
+  .photo-wrapper {
+    position: relative;
+    width: 200px;
+    margin: 1rem auto;
+  }
+
+  .blended-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    clip-path: polygon(
+      20% 0%,
+      80% 0%,
+      100% 45%,
+      80% 90%,
+      20% 90%,
+      0% 45%
+    );
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 6dvh 1rem 3rem;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 90%;
+    padding: 1.5rem;
   }
 }
-
 
 
 /* ==================== */
