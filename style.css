@@ -662,6 +662,86 @@ main{
   color: #cbd5e1;
 }
 
+/* =============== */
+/*  SOBRE MIM: SKILLS  */
+/* =============== */
+.skills-section {
+  max-width: 1200px;
+  margin: 10dvh auto 3rem;
+  padding: 0 2rem;
+}
+
+.skills-section .title {
+  color: #dbeafe;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: .75rem;
+}
+
+.skills-section .subtitle {
+  color: #94a3b8;
+  margin-bottom: 1.75rem;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-card {
+  background: linear-gradient(to bottom, #0f172a, #0a0a23);
+  border: 1px solid rgba(0,195,255,.35);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 0 10px rgba(0,195,255,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 22px rgba(0,195,255,.35);
+}
+
+.skill-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: .75rem;
+  letter-spacing: .3px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .6rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .35rem .7rem;
+  border-radius: 9999px;
+  background: rgba(56,189,248,.10);
+  border: 1px solid rgba(56,189,248,.35);
+  color: #e2e8f0;
+  font-size: .9rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.skill-chip i { font-size: .95rem; opacity: .9; }
+
+/* revelação suave no scroll (genérico) */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .skills-section { margin-top: 8dvh; }
+}
+
 
 /* ======================= */
 /*     RODAPÉ (FOOTER)     */

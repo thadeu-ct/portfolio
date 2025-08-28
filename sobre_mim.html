@@ -36,6 +36,51 @@
                         Meu objetivo é evoluir como desenvolvedor e engenheiro, enfrentando desafios que me permitam crescer de forma consistente e criativa.
                     </p>
                 </section>
+                <section id="skills" class="skills-section reveal">
+                    <h2 class="title">Skills</h2>
+                    <p class="subtitle">
+                        Curioso por sistemas bem projetados, conecto <strong>software</strong> e <strong>hardware</strong> para construir coisas úteis e robustas.
+                        Tenho foco em <strong>embarcados</strong>, <strong>automação</strong> e <strong>IoT</strong>, com base sólida em C/C++ e boas práticas de versionamento e teste.
+                    </p>
+
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h3>Programação</h3>
+                            <div class="skill-list">
+                                <span class="skill-chip"><i class="fa-solid fa-code"></i>C / C++</span>
+                                <span class="skill-chip"><i class="fa-solid fa-code"></i>Python</span>
+                                <span class="skill-chip"><i class="fa-solid fa-code"></i>JavaScript</span>
+                                <span class="skill-chip"><i class="fa-solid fa-terminal"></i>Linux</span>
+                                <span class="skill-chip"><i class="fa-solid fa-diagram-project"></i>Estruturas de Dados</span>
+                                <span class="skill-chip"><i class="fa-solid fa-bug"></i>Depuração</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3>Eletrônica & Embarcados</h3>
+                            <div class="skill-list">
+                                <span class="skill-chip"><i class="fa-solid fa-microchip"></i>Arduino</span>
+                                <span class="skill-chip"><i class="fa-solid fa-wifi"></i>ESP32 / ESP-IDF</span>
+                                <span class="skill-chip"><i class="fa-solid fa-wave-square"></i>LTSpice</span>
+                                <span class="skill-chip"><i class="fa-regular fa-object-group"></i>CircuitMaker</span>
+                                <span class="skill-chip"><i class="fa-solid fa-microchip"></i>Sensores & Atuação</span>
+                                <span class="skill-chip"><i class="fa-solid fa-link"></i>IoT</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3>Ferramentas & Fluxo</h3>
+                            <div class="skill-list">
+                                <span class="skill-chip"><i class="fa-brands fa-git-alt"></i>Git</span>
+                                <span class="skill-chip"><i class="fa-brands fa-github"></i>GitHub</span>
+                                <span class="skill-chip"><i class="fa-solid fa-screwdriver-wrench"></i>Debug Serial / Logic</span>
+                                <span class="skill-chip"><i class="fa-solid fa-layer-group"></i>HTML / CSS</span>
+                                <span class="skill-chip"><i class="fa-regular fa-file-code"></i>Documentação</span>
+                                <span class="skill-chip"><i class="fa-regular fa-clock"></i>Boa organização</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             <div id="footer"></div>
         </div>
@@ -47,9 +92,25 @@
                 document.getElementById(id).innerHTML = html;
             }
 
-            loadComponent("header", "componentes/header.html");
-            loadComponent("footer", "componentes/footer.html");
-        </script>
+            function setupReveal() {
+                const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                    e.target.classList.add('show');
+                    io.unobserve(e.target);
+                    }
+                });
+                }, { threshold: 0.12 });
 
+                document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+            }
+
+            // inicia tudo quando o DOM estiver pronto
+            document.addEventListener('DOMContentLoaded', () => {
+                loadComponent("header", "componentes/header.html");
+                loadComponent("footer", "componentes/footer.html");
+                setupReveal();
+            });
+        </script>
     </body>
 </html>
