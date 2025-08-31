@@ -1,6 +1,6 @@
 {
     "Arduino": {
-        "icon": "fa-brands fa-arduino",
+        "icon": "fa-brands fa-microchip",
         "color": "#00979D"
     },
     "C": {
@@ -41,7 +41,7 @@
     },
     "GitHub": {
         "icon": "fa-brands fa-github",
-        "color": "#181717"
+        "color": "#434242"
     },
     "HTML": {
         "icon": "fa-brands fa-html5",
@@ -64,7 +64,7 @@
         "color": "#3776AB"
     },
     "Sensores": {
-        "icon": "fa-solid fa-sensor",
+        "icon": "fa-solid fa-rss",
         "color": "#27AE60"
     },
     "SolidWorks": {

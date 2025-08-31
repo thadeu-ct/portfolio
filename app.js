@@ -97,10 +97,24 @@ async function renderHome() {
   container.innerHTML = destaques.map(p => projetoCardHTML(p, skills)).join("");
 }
 
+async function renderAtividades() {
+  const container = document.getElementById("projetos-atividades");
+  if (!container) return;
+
+  const projetos = await loadProjetos();
+
+  // ordenar (se quiser por cliques, nome, ou deixar como no JSON)
+  projetos.sort((a, b) => a.nome.localeCompare(b.nome));
+
+  container.innerHTML = projetos.map(projetoCardHTML).join("");
+}
+
+
 // -------- init --------
 document.addEventListener("DOMContentLoaded", async () => {
   bindCliqueTracking();
   renderHome();
+  renderAtividades();
 });
 
 function projetoCardHTML(p, skillsMap) {
