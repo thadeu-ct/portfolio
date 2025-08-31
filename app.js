@@ -67,26 +67,6 @@ function pickDestaques(list, nTop = 5) {
   return novo ? [novo, ...restantes] : restantes;
 }
 
-function projetoCardHTML(p, skillsMap) {
-  const skills = (p.skill || [])
-    .map(s => {
-      const icon = skillsMap[s] || "fa-solid fa-tag"; // fallback genérico
-      return `<span class="skill-chip"><i class="${icon}"></i> ${s}</span>`;
-    })
-    .join("");
-
-  return `
-    <div class="card-spotlight">
-      <div class="card-spotlight-head">
-        <h3>${p.nome} ${p.novo ? '<span class="tag-novo">Novo</span>' : ''}</h3>
-      </div>
-      <p class="desc">${p.descricao}</p>
-      <div class="skills-line">${skills}</div>
-      <a href="projetos/${p.link}" class="saiba-mais" data-id="${p.id}">Saiba mais…</a>
-    </div>
-  `;
-}
-
 async function renderHome() {
   const container = document.getElementById("projetos-home");
   if (!container) return; // se não tem a seção, não faz nada
@@ -101,12 +81,11 @@ async function renderAtividades() {
   const container = document.getElementById("projetos-atividades");
   if (!container) return;
 
-  const projetos = await loadProjetos();
+  const [projetos, skills] = await Promise.all([loadProjetos(), loadSkills()]);
 
-  // ordenar (se quiser por cliques, nome, ou deixar como no JSON)
   projetos.sort((a, b) => a.nome.localeCompare(b.nome));
 
-  container.innerHTML = projetos.map(projetoCardHTML).join("");
+  container.innerHTML = projetos.map(p => projetoCardHTML(p, skills)).join("");
 }
 
 
@@ -114,8 +93,9 @@ async function renderAtividades() {
 document.addEventListener("DOMContentLoaded", async () => {
   bindCliqueTracking();
   renderHome();
-  renderAtividades();
+  renderAtividades(); 
 });
+
 
 function projetoCardHTML(p, skillsMap) {
   let skills = (p.skill || []).map(s => {
