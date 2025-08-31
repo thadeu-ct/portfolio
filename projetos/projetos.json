@@ -1,0 +1,67 @@
+{
+    "projetos":[
+        {
+            "id": "huffman",
+            "nome": "Codificação de Huffman",
+            "descricao": "Implementação do algoritmo de Codificação de Huffman para compressão de dados.",
+            "skill": ["C", "Estruturas de Dados"],
+            "link": "huffman.html",
+            "cliques": 0,
+            "novo": false
+        },
+        {
+            "id": "ordenacao",
+            "nome": "Algoritmos de Ordenação",
+            "descricao": "Implementação de diversos algoritmos de ordenação, como Quick Sort, Merge Sort e Bubble Sort.",
+            "skill": ["C", "Estruturas de Dados"],
+            "link": "ordenacao.html",
+            "cliques": 0,
+            "novo": false
+        },
+        {
+            "id": "arvore_b",
+            "nome": "Árvore B",
+            "descricao": "Implementação de uma Árvore B para armazenamento eficiente de dados em disco.",
+            "skill": ["C", "Estruturas de Dados"],
+            "link": "arvore_b.html",
+            "cliques": 0,
+            "novo": false
+        },
+        {
+            "id": "grafo",
+            "nome": "Algoritmos em Grafos",
+            "descricao": "Implementação de algoritmos clássicos em grafos, como Dijkstra, BFS e DFS.",
+            "skill": ["C", "Estruturas de Dados"],
+            "link": "grafo.html",
+            "cliques": 0,
+            "novo": false
+        },
+        {
+            "id": "sudoku",
+            "nome": "Solver de Sudoku",
+            "descricao": "Programa que resolve tabuleiros de Sudoku utilizando técnicas de backtracking.",
+            "skill": ["C"],
+            "link": "sudoku.html",
+            "cliques": 0,
+            "novo": false
+        },
+        {
+            "id": "aerogerador",
+            "nome": "Ventos da Mudança",
+            "descricao": "Depois escreve",
+            "skill": ["SolidWorks", "documentação"],
+            "link": "aerogerador.html",
+            "cliques": 0,
+            "novo": false
+        },
+        {
+            "id": "pacman",
+            "nome": "PacMan - Do virtual ao real",
+            "descricao": "Desenvolvimento de um labirinto físico controlado por microcontrolador, inspirado no clássico jogo PacMan.",
+            "skill": ["Arduino", "C", "Eletrônica", "Python"],
+            "link": "pacman.html",
+            "cliques": 0,
+            "novo": true
+        }
+    ]
+}
