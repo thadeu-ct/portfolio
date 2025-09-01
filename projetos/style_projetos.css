@@ -1,0 +1,142 @@
+/* style_projetos.css */
+
+/* fundo com animação suave de vento em dark mode */
+body {
+  background: linear-gradient(120deg, #0a0f1f, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: vento 20s ease infinite;
+  color: #e0e0e0; /* texto claro */
+}
+
+@keyframes vento {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* navbar fixa e com fundo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 64px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #dbeafe;
+  font-family: 'Arial', sans-serif;
+}
+
+
+/* ======================= */
+/*    MENU DE NAVEGAÇÃO    */
+/* ======================= */
+
+.navbar {
+  position: absolute;
+  top: 2.5dvh;
+  right: 3dvw;
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #dbeafe;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.navbar a:hover {
+  color: #38bdf8; /* Azul claro ao passar o mouse */
+}
+
+/* container central dos projetos */
+.projeto-detalhe {
+  max-width: 900px;
+  margin: 6rem auto 4rem auto;
+  padding: 1rem 2rem; 
+  background: rgba(20, 20, 30, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* destaque do título */
+.projeto-detalhe h1 {
+  color: #4fc3f7; /* azul vento */
+  text-shadow: 0 0 8px rgba(79, 195, 247, 0.5);
+  margin-bottom: 1rem;
+}
+
+/* subtítulos */
+.projeto-detalhe h2 {
+  color: #81d4fa;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* botão especial só pros projetos */
+.btn-download {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0288d1;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.btn-download:hover {
+  background: #03a9f4;
+  box-shadow: 0 0 12px rgba(3,169,244,0.6);
+}
+
+/* intro em duas colunas */
+.projeto-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* texto ocupa metade */
+.projeto-intro .intro-texto {
+  flex: 1;
+}
+
+/* imagem ocupa metade */
+.projeto-intro .intro-imagem {
+  flex: 1;
+  text-align: center;
+}
+
+.projeto-intro img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* responsividade */
+@media (max-width: 768px) {
+  .projeto-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+}

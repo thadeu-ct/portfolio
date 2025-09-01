@@ -48,8 +48,8 @@
         {
             "id": "aerogerador",
             "nome": "Ventos da Mudança",
-            "descricao": "Depois escreve",
-            "skill": ["SolidWorks", "documentação"],
+            "descricao": "Projeto acadêmico desenvolvido com o objetivo de estudar a viabilidade da instalação de aerogeradores no Parque da Cidade.",
+            "skill": ["SolidWorks", "Documentação"],
             "link": "aerogerador.html",
             "cliques": 0,
             "novo": false
