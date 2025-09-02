@@ -79,7 +79,7 @@ body {
 
 /* destaque do título */
 .projeto-detalhe h1 {
-  color: #4fc3f7; /* azul vento */
+  color: #4fc3f7; 
   text-shadow: 0 0 8px rgba(79, 195, 247, 0.5);
   margin-bottom: 1rem;
 }
