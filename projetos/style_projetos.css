@@ -38,33 +38,32 @@ body {
 /*    MENU DE NAVEGAÇÃO    */
 /* ======================= */
 
-.navbar {
-  position: absolute;
-  top: 2.5dvh;
-  right: 3dvw;
-  z-index: 10;
+.navbar-projeto {
+  background: transparent;
+  padding: 1rem 4.5rem;
 }
 
-.navbar ul {
+.navbar-projeto ul {
   list-style: none;
-  display: flex;
-  gap: 36px;
   margin: 0;
   padding: 0;
 }
 
-.navbar a {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #dbeafe;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  letter-spacing: 1px;
+.navbar-projeto li {
+  display: inline-block;
 }
 
-.navbar a:hover {
-  color: #38bdf8; /* Azul claro ao passar o mouse */
+.navbar-projeto a {
+  color: #d8dbdc;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
+
+.navbar-projeto a:hover {
+  color: #81d4fa;
+}
+
 
 /* container central dos projetos */
 .projeto-detalhe {
