@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PacMan | Do Virtual ao Real</title>
+
+    <!-- css global -->
+    <link rel="stylesheet" href="../style.css" />
+    <!-- css especial de projetos -->
+    <link rel="stylesheet" href="style_projetos.css" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* canvas como fundo */
+      #pacman-led-bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1; /* fica atrás do conteúdo */
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="pacman-bg">
+    <!-- canvas de LEDs de fundo -->
+    <canvas id="pacman-led-bg" aria-hidden="true"></canvas>
+
+    <div class="container">
+      <div id="header_proj"></div>
+
+      <main class="projeto-detalhe">
+        <h1>PacMan | Do Virtual ao Real</h1>
+        <p>
+          Desenvolvimento de um labirinto físico controlado por microcontrolador,
+          inspirado no clássico jogo PacMan. O projeto envolveu a criação de um
+          labirinto com chão de fita de LEDs, controladas por um Arduino, e a
+          implementação de um sistema de controle visual via Python.
+        </p>
+
+        <!-- Vídeo -->
+        <section class="projeto-video">
+          <h2>Vídeo de Demonstração</h2>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/202jqDJVHeo"
+              title="Pacman em C - Demonstração"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="video-link">
+            Caso o vídeo não carregue, você pode assistir diretamente no
+            <a href="https://youtu.be/202jqDJVHeo" target="_blank">YouTube</a>.
+          </p>
+        </section>
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <!-- carregamento dos componentes -->
+    <script>
+      async function loadComponent(id, file) {
+        const res = await fetch(file);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        loadComponent("header_proj", "../componentes/header_proj.html");
+        loadComponent("footer", "../componentes/footer.html");
+      });
+    </script>
+
+    <!-- animação dos LEDs -->
+    <script>
+      (() => {
+        const canvas = document.getElementById("pacman-led-bg");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+
+        const COLS = 15, ROWS = 10;
+        let W = 0, H = 0, CELL = 0, ORIGIN_X = 0, ORIGIN_Y = 0;
+
+        // sempre começam amarelos fortes
+        const trail = Array.from({ length: ROWS }, () =>
+          Array.from({ length: COLS }, () => ({ r: 255, g: 235, b: 59, a: 0.9 }))
+        );
+
+        const ghosts = [
+          { i: 1, j: 1, color: [255, 0, 0] },                   // vermelho
+          { i: 1, j: COLS - 2, color: [0, 255, 255] },          // ciano
+          { i: ROWS - 2, j: 1, color: [255, 105, 180] },        // rosa
+          { i: ROWS - 2, j: COLS - 2, color: [255, 165, 0] }    // laranja
+        ];
+
+        function resize() {
+            const dpr = Math.min(2, window.devicePixelRatio || 1);
+            W = window.innerWidth + 90;
+            H = window.innerHeight;
+            canvas.width = Math.floor(W * dpr);
+            canvas.height = Math.floor(H * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            CELL = Math.floor(Math.min(W / COLS, H / ROWS));
+            ORIGIN_X = (W - CELL * COLS) / 2 -200;
+            ORIGIN_Y = (H - CELL * ROWS) / 2 + 50;
+        }
+        window.addEventListener("resize", resize, { passive: true });
+        resize();
+
+        const stepMs = 1000; // mais lento (1 segundo entre passos)
+        let lastStep = 0;
+
+        function stepGhosts(now) {
+          if (now - lastStep < stepMs) return;
+          lastStep = now;
+
+          ghosts.forEach((g) => {
+            for (let t = 0; t < 4; t++) {
+              const dir = Math.floor(Math.random() * 4);
+              let ni = g.i, nj = g.j;
+              if (dir === 0 && g.i > 0) ni--;
+              else if (dir === 1 && g.i < ROWS - 1) ni++;
+              else if (dir === 2 && g.j > 0) nj--;
+              else if (dir === 3 && g.j < COLS - 1) nj++;
+
+              if (ni !== g.i || nj !== g.j) {
+                g.i = ni; g.j = nj;
+                break;
+              }
+            }
+            const cell = trail[g.i][g.j];
+            cell.r = g.color[0];
+            cell.g = g.color[1];
+            cell.b = g.color[2];
+            cell.a = 1.0;
+          });
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          const radius = Math.floor(CELL * 0.22);
+
+          for (let i = 0; i < ROWS; i++) {
+            for (let j = 0; j < COLS; j++) {
+                const cx = ORIGIN_X + j * CELL + CELL / 2;
+                const cy = ORIGIN_Y + i * CELL + CELL / 2;
+
+                const t = trail[i][j];
+
+                ctx.beginPath();
+                ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${t.r},${t.g},${t.b},${t.a})`;
+                ctx.fill();
+
+                // decaimento mais suave voltando ao amarelo
+                t.r += (255 - t.r) * 0.005;
+                t.g += (235 - t.g) * 0.005;
+                t.b += (59  - t.b) * 0.005;
+                t.a += (0.9 - t.a) * 0.005;
+            }
+          }
+        }
+
+        function loop(now) {
+          stepGhosts(now || 0);
+          draw();
+          requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
+      })();
+    </script>
+  </body>
+</html>
