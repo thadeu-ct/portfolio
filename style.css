@@ -524,6 +524,39 @@ main{
   }
 }
 
+/* ========================== */
+/*    PÁGINA EM CONSTRUÇÃO    */
+/* ========================== */
+.construction-notice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: auto;
+    flex-grow: 1; /* Essencial para ocupar o espaço vertical */
+    color: #cbd5e1; /* Cor padrão para parágrafos */
+}
+
+.construction-notice i {
+    font-size: 4rem;
+    color: #38bdf8; /* Sua cor de destaque */
+    margin-bottom: 1.5rem;
+}
+
+.construction-notice h3 {
+    font-size: 1.75rem;
+    color: #e2e8f0; /* Cor padrão para títulos */
+    margin-bottom: 0.5rem;
+}
+
+.construction-notice p {
+    max-width: 450px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 
 /* ==================== */
 /*     CERTIFICADOS     */
@@ -797,9 +830,9 @@ main{
   color: #cbd5e1;
 }
 
-/* =============== */
+/* =================== */
 /*  SOBRE MIM: SKILLS  */
-/* =============== */
+/* =================== */
 .skills-section {
   max-width: 1200px;
   margin: 10dvh auto 3rem;

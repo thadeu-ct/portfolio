@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thadeu Cavalcanti | Sudoku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    <div class="container">
+        <div id="header"></div>
+        
+        <main id="conteudo-principal"></main>
+
+        <div id="footer"></div>
+    </div>
+
+    <script>
+        async function loadComponent(id, file) {
+            const res = await fetch(file);
+            const html = await res.text();
+            document.getElementById(id).innerHTML = html;
+        }
+
+        // Lembre-se de usar os caminhos com ../ por estar dentro da pasta /projetos
+        loadComponent("header", "../componentes/header_proj.html");
+        loadComponent("conteudo-principal", "../componentes/em-construcao.html");
+        loadComponent("footer", "../componentes/footer.html");
+    </script>
+</body>
+</html>
