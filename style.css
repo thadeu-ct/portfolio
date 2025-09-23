@@ -314,6 +314,43 @@ main{
   }
 }
 
+/* ================================================ */
+/* AJUSTE DE ALINHAMENTO DAS SEÇÕES NA PÁGINA HOME */
+/* ================================================ */
+
+.home .atividade-section {
+    /* Define uma largura máxima para o conteúdo não esticar demais */
+    max-width: 1200px; 
+    
+    /* Centraliza o bloco na página */
+    margin-left: 4rem;
+
+    /* Adiciona o espaçamento lateral para alinhar com o resto */
+    padding: 0 2rem; 
+
+    /* Mantém um espaçamento inferior entre as seções */
+    margin-bottom: 4rem;
+}
+
+.home .atividade-section-carousel {
+    /* Define uma largura máxima para o conteúdo não esticar demais */
+    max-width: 1200px; 
+    
+    /* Centraliza o bloco na página */
+    margin-left: 1.5rem;
+
+    /* Adiciona o espaçamento lateral para alinhar com o resto */
+    padding: 0 2rem; 
+
+    /* Mantém um espaçamento inferior entre as seções */
+    margin-bottom: 4rem;
+}
+
+/* Remove a margem superior do primeiro bloco para não criar espaço extra */
+.home .atividade-section:first-of-type {
+    margin-top: 4rem;
+}
+
 /* ====== Vitrine de destaques (Home) ====== */
 .destaques-home {
   max-width: 1200px;

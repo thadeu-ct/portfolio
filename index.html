@@ -37,6 +37,28 @@
                         <p>Conheça minha trajetória, interesses e o que me motiva.</p>
                     </a>
                 </section>
+                <section class="atividade-section">
+                    <h3>Monitoria de Programação em C</h3>
+                    <p>
+                        Atuo como monitor na disciplina de Programação em C na PUC-Rio, auxiliando alunos a compreenderem conceitos fundamentais de programação e desenvolvimento de software.
+                        Essa experiência tem sido enriquecedora, permitindo-me compartilhar conhecimento e aprimorar minhas habilidades técnicas.
+                    </p>
+                </section>
+
+                <section class="atividade-section">
+                    <h3>RioBotz</h3>
+                    <p>
+                        Parte da maior equipe de robótica de combate do mundo, onde atuo na manutenção e no desenvolvimento de projetos eletrônicos.
+                        Aqui estão algumas conquistas da equipe desde a minha entrada:
+                    </p>
+                </section>
+                <section class="atividade-section-carousel">
+                    <div class="coverflow-carousel-container" id="riobotz-carousel">
+                        <div class="coverflow-carousel-track"> </div>
+                        <button class="carousel-button prev-button">&lt;</button>
+                        <button class="carousel-button next-button">&gt;</button>
+                    </div>
+                </section>
                 <section class="destaques-home">
                     <h2>Projetos em Destaque</h2>
                     <div id="projetos-home" class="preview-cards">
@@ -47,6 +69,7 @@
         </div>
 
         <script src="app.js" defer></script>
+        <script src="carousel.js" defer></script>
         <script>
             async function loadComponent(id, file) {
                 const res = await fetch(file);
