@@ -29,18 +29,52 @@
         <section class="atividade-section">
           <h3>RioBotz</h3>
           <p>
-            Parte da maior equipe de robótica de combate do mundo, onde atuo na manutenção e no desenvolvimento de projetos eletrônicos.
-            Aqui estão alguns prêmios conquistados desde minha entrada na equipe:
+              Parte da maior equipe de robótica de combate do mundo, onde atuo na manutenção e no desenvolvimento de projetos eletrônicos.
+              Aqui estão algumas conquistas da equipe desde a minha entrada:
           </p>
-          <div class="cards-atividades">
-            <div class="card-atividade">
-              <h4>Robocore Experience | RCX</h4>
-              <p>1º lugar na categoria Featherweight na maior ccompetição de combate de robôs da américa latina.</p>
-            </div>
-            <div class="card-atividade">
-              <h4>Rio Inovation Week</h4>
-              <p>Em 2 das categorias conquistamos pódio triplo na Fairyweight e dobradinha ouro-prata na categoria Antweight.</p>
-            </div>
+
+          <div class="coverflow-carousel-container" id="riobotz-carousel">
+              <div class="coverflow-carousel-track">
+
+                  <div class="carousel-card-wrapper">
+                      <div class="card-atividade">
+                          <h4>Rio Innovation Week 2025</h4>
+                          <p>Conquistamos pódio triplo na categoria Fairyweight e uma dobradinha de ouro e prata na Antweight.</p>
+                      </div>
+                  </div>
+
+                  <div class="carousel-card-wrapper">
+                      <div class="card-atividade">
+                          <h4>RoboCore Experience 2025</h4>
+                          <p>No maior evento da América Latina, garantimos o 1º lugar na disputada categoria Featherweight.</p>
+                      </div>
+                  </div>
+
+                  <div class="carousel-card-wrapper">
+                      <div class="card-atividade">
+                          <h4>Iron Cup 2025</h4>
+                          <p>Participação que testou a resiliência dos nossos robôs e trouxe aprendizados valiosos para a equipe.</p>
+                      </div>
+                  </div>
+
+                  <div class="carousel-card-wrapper">
+                      <div class="card-atividade">
+                          <h4>Rio Innovation Week 2024</h4>
+                          <p>Edição marcante, com pódios de 1º e 3º nas categorias Fairyweight e Antweight, e 1º e 2º na Beetleweight.</p>
+                      </div>
+                  </div>
+
+                  <div class="carousel-card-wrapper">
+                      <div class="card-atividade">
+                          <h4>RoboCore Experience 2024</h4>
+                          <p>Nosso robô Touro Feather conquistou o pódio com um merecido bronze na categoria Featherweight.</p>
+                      </div>
+                  </div>
+
+              </div>
+
+              <button class="carousel-button prev-button">&lt;</button>
+              <button class="carousel-button next-button">&gt;</button>
           </div>
         </section>
         <section class="atividade-section">
@@ -56,6 +90,7 @@
     </div>
 
     <script src="app.js" defer></script>
+    <script src="carousel.js" defer></script>
     <script>
       async function loadComponent(id, file) {
         const res = await fetch(file);
