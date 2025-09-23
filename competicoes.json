@@ -1,19 +1,9 @@
 {
   "competicoes": [
     {
-      "id": "riw2025",
-      "titulo": "Rio Innovation Week 2025",
-      "descricao": "Conquistamos pódio triplo na categoria Fairyweight e uma dobradinha de ouro e prata na Antweight."
-    },
-    {
-      "id": "rcx2025",
-      "titulo": "RoboCore Experience 2025",
-      "descricao": "No maior evento da América Latina, garantimos o 1º lugar na disputada categoria Featherweight."
-    },
-    {
-      "id": "ironcup2025",
-      "titulo": "Iron Cup 2025",
-      "descricao": "Participação que testou a resiliência dos nossos robôs e trouxe aprendizados valiosos para a equipe."
+      "id": "rcx2024",
+      "titulo": "RoboCore Experience 2024",
+      "descricao": "Nosso robô Touro Feather conquistou o pódio com um merecido bronze na categoria Featherweight."
     },
     {
       "id": "riw2024",
@@ -21,9 +11,19 @@
       "descricao": "Edição marcante, com pódios de 1º e 3º nas categorias Fairyweight e Antweight, e 1º e 2º na Beetleweight."
     },
     {
-      "id": "rcx2024",
-      "titulo": "RoboCore Experience 2024",
-      "descricao": "Nosso robô Touro Feather conquistou o pódio com um merecido bronze na categoria Featherweight."
+      "id": "ironcup2025",
+      "titulo": "Iron Cup 2025",
+      "descricao": "Participação que testou a resiliência dos nossos robôs e trouxe aprendizados valiosos para a equipe."
+    },
+    {
+      "id": "rcx2025",
+      "titulo": "RoboCore Experience 2025",
+      "descricao": "No maior evento da América Latina, garantimos o 1º lugar na disputada categoria Featherweight."
+    },
+    {
+      "id": "riw2025",
+      "titulo": "Rio Innovation Week 2025",
+      "descricao": "Conquistamos pódio triplo na categoria Fairyweight e uma dobradinha de ouro e prata na Antweight."
     }
   ]
 }
