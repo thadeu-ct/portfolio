@@ -147,26 +147,19 @@ function setCliquesMap(map) {
 }
 
 function contarClique(id) {
-  if (window.location.hostname === "localhost") { // Caso esteja na minha máquina
-    
-    console.log("Ambiente local detectado. Enviando clique para o PHP...");
-    const url = `http://localhost/Site_Thadeu/api.php?id=${id}`;
+  console.log(`Enviando clique para o projeto: ${id}`);
+  
+  const url = `https://portfolio-ten-azure-17.vercel.app/api/clique?id=${id}`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log("Resposta do servidor PHP:", data.mensagem);
-      })
-      .catch(error => {
-        console.error("Erro ao contatar o servidor local:", error);
-      });
-
-  } else { // Caso esteja no GitHub Pages 
-    console.log("Ambiente online detectado. Usando localStorage.");
-    const mapa = getCliquesMap();
-    mapa[id] = (mapa[id] || 0) + 1;
-    setCliquesMap(mapa);
-  }
+  fetch(url, { method: 'GET', keepalive: true })
+    .then(response => {
+      if (response.ok) {
+        console.log("Clique registrado com sucesso pela API.");
+      }
+    })
+    .catch(error => {
+      console.error("Erro ao contatar a API Vercel:", error);
+    });
 }
 
 function bindCliqueTracking() {
