@@ -17,18 +17,23 @@ let skillsMap = {};
 // ===================================================================
 
 /**
- * Carrega a lista de projetos do arquivo projetos.json e mescla com os cliques locais.
+ * Carrega a lista de projetos do arquivo projetos.json e mescla com os cliques do banco de dados.
  * Retorna Uma lista com todos os objetos de projeto.
  */
 async function loadProjetos() {
-  const res = await fetch(PROJETOS_URL, { cache: "no-store" });
-  const data = await res.json();
-  const mapaCliquesLocal = getCliquesMap();
+  const projetosRes = await fetch(PROJETOS_URL, { cache: "no-store" });
+  const dataProjetos = await projetosRes.json();
 
-  data.projetos.forEach(p => {
-    if (mapaCliquesLocal[p.id] != null) p.cliques = mapaCliquesLocal[p.id];
+  const cliquesRes = await fetch('https://portfolio-ten-azure-17.vercel.app/api/get-cliques');
+  const mapaDeCliques = await cliquesRes.json();
+
+  dataProjetos.projetos.forEach(p => {
+    if (mapaDeCliques[p.id] != null) {
+      p.cliques = mapaDeCliques[p.id];
+    }
   });
-  return data.projetos;
+
+  return dataProjetos.projetos;
 }
 
 /**
@@ -128,23 +133,8 @@ async function renderAtividades() {
 }
 
 // ===================================================================
-// 5. CONTROLE DE CLIQUES (Futura conexão com PHP)
+// 5. CONTROLE DE CLIQUES (Conexão com Banco de Dados)
 // ===================================================================
-
-// Chave para salvar os cliques no armazenamento local do navegador
-const CLIQUES_KEY = "projetosCliques_v1";
-
-function getCliquesMap() {
-  try {
-    return JSON.parse(localStorage.getItem(CLIQUES_KEY)) || {};
-  } catch {
-    return {};
-  }
-}
-
-function setCliquesMap(map) {
-  localStorage.setItem(CLIQUES_KEY, JSON.stringify(map));
-}
 
 function contarClique(id) {
   console.log(`Enviando clique para o projeto: ${id}`);
