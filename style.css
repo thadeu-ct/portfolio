@@ -54,7 +54,7 @@ main{
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
+  text-decoration-line: none;
 }
 
 .logo img {
