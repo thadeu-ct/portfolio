@@ -19,7 +19,7 @@
             "novo": false
         },
         {
-            "id": "arvore_b",
+            "id": "arvore-b",
             "nome": "Árvore B",
             "descricao": "Implementação de uma Árvore B para armazenamento eficiente de dados em disco.",
             "skill": ["C", "Estruturas de Dados"],
