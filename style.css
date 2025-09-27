@@ -37,6 +37,14 @@ main{
     flex-direction: column;
 }
 
+a.logo, a.logo:hover {
+  text-decoration: none; 
+}
+
+a.logo span {
+  color: #dbeafe; 
+}
+
 /* ====================== */
 /*     BARRA SUPERIOR     */
 /* ====================== */
@@ -54,7 +62,6 @@ main{
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration-line: none;
 }
 
 .logo img {
