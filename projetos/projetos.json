@@ -23,7 +23,7 @@
             "nome": "Árvore B",
             "descricao": "Implementação de uma Árvore B para armazenamento eficiente de dados em disco.",
             "skill": ["C", "Estruturas de Dados"],
-            "link": "arvore_b.html",
+            "link": "arvore-b.html",
             "cliques": 0,
             "novo": false
         },
