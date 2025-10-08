@@ -1,21 +1,42 @@
 # Portfólio - Thadeu Cavalcanti
+Este é o meu cartão de visitas digital, onde apresento minha jornada como desenvolvedor, meus projetos e minhas habilidades. O site foi construído do zero como uma forma de aplicar e aprofundar meus conhecimentos em desenvolvimento frontend, focando em clareza, manutenibilidade e interatividade.</br>
 
-Este repositório contém o código-fonte do meu portfólio pessoal, desenvolvido com HTML, CSS e JavaScript. O objetivo é apresentar meus projetos, experiências acadêmicas, currículo e interesses na área de tecnologia e design funcional.
+**[🔗 Acesse a plataforma](https://thadeu-ct.github.io/portfolio)**
 
-## 🔗 Acesse o site
-[https://thadeu-ct.github.io/portfolio](https://thadeu-ct.github.io/portfolio)
+<img width="1761" height="870" alt="image" src="https://github.com/user-attachments/assets/4560bb4e-9c17-4a2b-b43e-6ba8c69c574e" />
+
+## ✨ Tecnologias Utilizadas
+Este projeto foi construído utilizando tecnologias web fundamentais, com foco em um código limpo, semântico e sem a necessidade de frameworks, garantindo performance e manutenibilidade.
+<p align="left">
+  <a href="#"><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
+  <a href="#"><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
+  <a href="#"><img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"></a>
+  <a href="#"><img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Neon-00E599?style=for-the-badge&logo=neon&logoColor=white" alt="Neon"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"></a>
+  <a href="#"><img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git"></a>
+</p>
+
+##🚀 Principais Features e Aprendizados
+Arquitetura Modular: O site foi estruturado com componentes reutilizáveis (como header e footer), que são carregados dinamicamente com JavaScript. Isso evita a repetição de código e facilita a manutenção.</br>
+Manipulação do DOM com JavaScript Puro: Todo o projeto foi uma oportunidade para praticar a manipulação de elementos da página, criando a interatividade de uma Single Page Application (SPA) sem o uso de frameworks.</br>
+Roteamento Simples: Implementação de uma lógica de carregamento de páginas que atualiza o conteúdo principal sem a necessidade de recarregar o site inteiro.
 
 ## 📁 Estrutura do projeto
-- `index.html`, `style.css`, `atividades.html`, `certificados.html`, `sobre_mim.html`, `app.js`
-- `/projetos`: projetos individuais
-- `/componentes`: partes reutilizáveis como header e footer
-- `/imagens`: recursos visuais do site
-- `/arquivos`: currículos, certificados e outros para download (em breve)
+O portfolio foi criado de forma responsiva e modular, com componentes reutilizáveis e foco em clareza visual. Ainda em evolução, ele será atualizado com novos projetos e funcionalidades.
+```
+├── componentes/            # Componentes HTML reutilizáveis (header, footer)
+│   ├── footer.html
+│   └── header.html
+├── img/                    # Recursos visuais
+├── index.html
+└── style.css
+```
 
-## 📌 Sobre
-O site foi criado de forma responsiva e modular, com componentes reutilizáveis e foco em clareza visual. Ainda em evolução, ele será atualizado com novos projetos e funcionalidades.
-
-## 📫 Contato
-- **LinkedIn:** [https://www.linkedin.com/in/thadeu-ct](https://www.linkedin.com/in/thadeu-ct)
-- **GitHub:** [https://github.com/thadeu-ct](https://github.com/thadeu-ct)
-- **E-mail:** thadeu.ct@gmail.com
+## 📬 Contato
+<p align="left">
+  <a href="https://thadeu-ct.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-255E63?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"></a>
+  <a href="https://github.com/thadeu-ct"><img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/thadeu-ct/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:thadeu.ct@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
+</p>
