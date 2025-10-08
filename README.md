@@ -22,15 +22,32 @@ Arquitetura Modular: O site foi estruturado com componentes reutilizáveis (como
 Manipulação do DOM com JavaScript Puro: Todo o projeto foi uma oportunidade para praticar a manipulação de elementos da página, criando a interatividade de uma Single Page Application (SPA) sem o uso de frameworks.</br>
 Roteamento Simples: Implementação de uma lógica de carregamento de páginas que atualiza o conteúdo principal sem a necessidade de recarregar o site inteiro.
 
-## 📁 Estrutura do projeto
-O portfolio foi criado de forma responsiva e modular, com componentes reutilizáveis e foco em clareza visual. Ainda em evolução, ele será atualizado com novos projetos e funcionalidades.
+## 📁 Estrutura do Projeto
+A estrutura de arquivos foi organizada de forma modular para separar as diferentes páginas, componentes reutilizáveis, scripts e recursos visuais do projeto.
 ```
+├── api/
+│   ├── clique.js
+│   └── get-clique.js
+├── arquivos/               # arquivos baixáveis (CV, relatório, ...)
 ├── componentes/            # Componentes HTML reutilizáveis (header, footer)
 │   ├── footer.html
 │   └── header.html
-├── img/                    # Recursos visuais
+├── img/                    # Recursos visuais (Logo, imagens de projetos, ...)
 ├── index.html
 └── style.css
+├── projetos/               # Recursos das páginas de projetos (style-projetos.css, projetos.json, htmls de projetos)
+├── README.md
+├── app.js
+├── atividades.html
+├── carrossel.js
+├── certificados.html
+├── competicoes.json
+├── index.html
+├── package.json
+├── skills.json
+├── sobre-mim.html
+├── style.css
+├── vercel.json
 ```
 
 ## 📬 Contato
@@ -40,3 +57,5 @@ O portfolio foi criado de forma responsiva e modular, com componentes reutilizá
   <a href="https://www.linkedin.com/in/thadeu-ct/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="mailto:thadeu.ct@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
 </p>
+
+
