@@ -28,14 +28,14 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 ├── api/
 │   ├── clique.js
 │   └── get-clique.js
-├── arquivos/               # arquivos baixáveis (CV, relatório, ...)
-├── componentes/            # Componentes HTML reutilizáveis (header, footer)
+├── arquivos/            # arquivos baixáveis (CV, relatório, ...)
+├── componentes/         # Componentes HTML reutilizáveis (header, footer)
 │   ├── footer.html
 │   └── header.html
-├── img/                    # Recursos visuais (Logo, imagens de projetos, ...)
+├── img/                 # Recursos visuais (Logo, imagens de projetos, ...)
 ├── index.html
-└── style.css
-├── projetos/               # Recursos das páginas de projetos (style-projetos.css, projetos.json, ...)
+├── style.css
+├── projetos/            # Recursos das páginas de projetos (style-projetos.css, projetos.json, ...)
 ├── README.md
 ├── app.js
 ├── atividades.html
