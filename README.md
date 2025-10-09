@@ -35,7 +35,7 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 ├── img/                    # Recursos visuais (Logo, imagens de projetos, ...)
 ├── index.html
 └── style.css
-├── projetos/               # Recursos das páginas de projetos (style-projetos.css, projetos.json, htmls de projetos)
+├── projetos/               # Recursos das páginas de projetos (style-projetos.css, projetos.json, ...)
 ├── README.md
 ├── app.js
 ├── atividades.html
@@ -47,7 +47,7 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 ├── skills.json
 ├── sobre-mim.html
 ├── style.css
-├── vercel.json
+└── vercel.json
 ```
 
 ## 📬 Contato
