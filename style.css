@@ -1032,7 +1032,7 @@ a.logo span {
 
 .social-menu {
   background-color: transparent;
-  padding: 1rem 0;
+  padding-top: 1rem;
   text-align: center;
 }
 
@@ -1057,3 +1057,10 @@ a.logo span {
   color: #00c8ff;
 }
 
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
