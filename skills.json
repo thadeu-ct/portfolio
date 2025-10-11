@@ -1,74 +1,94 @@
 {
-    "Arduino": {
-        "icon": "fa-brands fa-microchip",
-        "color": "#00979D"
-    },
-    "C": {
-        "icon": "fa-solid fa-code",
-        "color": "#A8B9CC"
-    },
-    "C++": {
-        "icon": "fa-solid fa-code",
-        "color": "#00599C"
-    },
-    "CSS": {
-        "icon": "fa-solid fa-code",
-        "color": "#1572B6"
-    },
-    "CircuitMaker": {
-        "icon": "fa-regular fa-object-group",
-        "color": "#FF6F00"
-    },
-    "Depuração": {
-        "icon": "fa-solid fa-bug",
-        "color": "#E44D26"
-    },
-    "Documentação": {
-        "icon": "fa-regular fa-file-code",
-        "color": "#4A90E2"
-    },
-    "ESP32": {
-        "icon": "fa-solid fa-microchip",
-        "color": "#3C3C3C"
-    },
-    "Eletrônica": {
-        "icon": "fa-solid fa-bolt",
-        "color": "#F0DB4F"
-    },
-    "Estruturas de Dados": {
-        "icon": "fa-solid fa-diagram-project",
-        "color": "#8E44AD"
-    },
-    "GitHub": {
-        "icon": "fa-brands fa-github",
-        "color": "#434242"
-    },
-    "HTML": {
-        "icon": "fa-brands fa-html5",
-        "color": "#E34F26"
-    },
-    "IoT": {
-        "icon": "fa-solid fa-cloud",
-        "color": "#00AEEF"
-    },
-    "JavaScript": {
-        "icon": "fa-brands fa-js",
-        "color": "#F7DF1E"
-    },
-    "LTSpice": {
-        "icon": "fa-solid fa-wave-square",
-        "color": "#FF6F00"
-    },
-    "Python": {
-        "icon": "fa-brands fa-python",
-        "color": "#3776AB"
-    },
-    "Sensores": {
-        "icon": "fa-solid fa-rss",
-        "color": "#27AE60"
-    },
-    "SolidWorks": {
-        "icon": "fa-solid fa-cube",
-        "color": "#FF6F00"
-    } 
+  "Arduino": {
+    "icon": "fa-brands fa-microchip",
+    "color": "#00979D"
+  },
+  "C": {
+    "icon": "fa-solid fa-code",
+    "color": "#A8B9CC"
+  },
+  "C++": {
+    "icon": "fa-solid fa-code",
+    "color": "#00599C"
+  },
+  "CSS": {
+    "icon": "fa-brands fa-css3-alt",
+    "color": "#1572B6"
+  },
+  "CircuitMaker": {
+    "icon": "fa-regular fa-object-group",
+    "color": "#FF6F00"
+  },
+  "Depuração": {
+    "icon": "fa-solid fa-bug",
+    "color": "#E44D26"
+  },
+  "Documentação": {
+    "icon": "fa-regular fa-file-code",
+    "color": "#4A90E2"
+  },
+  "ESP32": {
+    "icon": "fa-solid fa-microchip",
+    "color": "#3C3C3C"
+  },
+  "Eletrônica": {
+    "icon": "fa-solid fa-bolt",
+    "color": "#F0DB4F"
+  },
+  "Emscripten": {
+    "icon": "fa-solid fa-terminal",
+    "color": "#4CAF50"
+  },
+  "Estruturas de Dados": {
+    "icon": "fa-solid fa-diagram-project",
+    "color": "#8E44AD"
+  },
+  "GitHub": {
+    "icon": "fa-brands fa-github",
+    "color": "#434242"
+  },
+  "HTML": {
+    "icon": "fa-brands fa-html5",
+    "color": "#E34F26"
+  },
+  "IoT": {
+    "icon": "fa-solid fa-cloud",
+    "color": "#00AEEF"
+  },
+  "JavaScript": {
+    "icon": "fa-brands fa-js",
+    "color": "#F7DF1E"
+  },
+  "LTSpice": {
+    "icon": "fa-solid fa-wave-square",
+    "color": "#FF6F00"
+  },
+  "Neon": {
+    "icon": "fa-solid fa-database",
+    "color": "#00E599"
+  },
+  "Python": {
+    "icon": "fa-brands fa-python",
+    "color": "#3776AB"
+  },
+  "Sensores": {
+    "icon": "fa-solid fa-rss",
+    "color": "#27AE60"
+  },
+  "SolidWorks": {
+    "icon": "fa-solid fa-cube",
+    "color": "#FF6F00"
+  },
+  "Supabase": {
+    "icon": "fa-solid fa-shield-halved",
+    "color": "#3ECF8E"
+  },
+  "Vercel": { 
+    "icon": "fa-solid fa-triangle-exclamation",
+    "color": "#000000"
+  },
+  "WebAssembly": {
+    "icon": "fa-solid fa-cubes",
+    "color": "#654FF0"
+  }
 }
