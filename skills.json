@@ -43,6 +43,10 @@
     "icon": "fa-solid fa-diagram-project",
     "color": "#8E44AD"
   },
+  "Git": {
+    "icon": "fa-brands fa-git-alt",
+    "color": "#F05033"
+  },
   "GitHub": {
     "icon": "fa-brands fa-github",
     "color": "#434242"

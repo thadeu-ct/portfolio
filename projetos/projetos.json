@@ -40,7 +40,7 @@
             "id": "sudoku",
             "nome": "Solver de Sudoku",
             "descricao": "Programa que resolve tabuleiros de Sudoku utilizando técnicas de backtracking.",
-            "skill": ["C", "HTML", "CSS", "Javascript", "WebAssembly", "Emscripten"],
+            "skill": ["C", "HTML", "CSS", "JavaScript", "WebAssembly", "Emscripten"],
             "link": "sudoku.html",
             "cliques": 0,
             "novo": true
