@@ -43,7 +43,7 @@
             "skill": ["C"],
             "link": "sudoku.html",
             "cliques": 0,
-            "novo": false
+            "novo": true
         },
         {
             "id": "aerogerador",
@@ -61,7 +61,7 @@
             "skill": ["Arduino", "C", "Eletrônica", "Python"],
             "link": "pacman.html",
             "cliques": 0,
-            "novo": true
+            "novo": false
         }
     ]
 }
