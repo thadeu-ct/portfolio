@@ -158,3 +158,66 @@ body.pacman-bg .projeto-detalhe h1 {
   color: #ffeb3b;
   text-shadow: 0 0 12px rgba(255,235,59,0.7);
 }
+
+
+/* ================================================== */
+/* CSS SUDOKU                                         */
+/* ================================================== */
+
+body.sudoku-bg {
+  background-color: #10141d;
+}
+
+/* Estilo para o botão de acesso ao jogo */
+.btn-acessar {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #28a745; /* Um verde chamativo */
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.btn-acessar:hover {
+  background: #218838;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+}
+
+/* Ajustes para a imagem de destaque */
+.projeto-intro.full-width {
+  width: 100%;
+  margin: 2rem 0;
+  text-align: center;
+  display: block; /* Garante que ocupe a largura total */
+}
+.projeto-intro.full-width img {
+    max-width: 80%; /* Para não estourar em telas pequenas */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* Ajuste para o texto principal do projeto para o fundo escuro */
+body.sudoku-bg .projeto-detalhe h1 {
+  color: #81d4fa; /* Um azul claro */
+  text-shadow: 0 0 8px rgba(129, 212, 250, 0.5);
+}
+body.sudoku-bg .projeto-detalhe h2 {
+  color: #a7e6ff; /* Um azul ainda mais claro */
+}
+body.sudoku-bg .projeto-detalhe p {
+  color: #dbeafe;
+}
+
+#sudoku-grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  filter: blur(0.5px);
+  opacity: 0.8;
+}

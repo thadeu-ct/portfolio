@@ -1,31 +1,227 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thadeu Cavalcanti | Solver de Sudoku</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css"> 
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku em C</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style-projetos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      #sudoku-grid-bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="sudoku-bg">
+    <canvas id="sudoku-grid-bg" aria-hidden="true"></canvas>
+
     <div class="container">
         <div id="header"></div>
-        
-        <main id="conteudo-principal"></main>
-
+            <main class="projeto-detalhe">
+                <h1>Sudoku em C com WebAssembly</h1>
+                <section class="projeto-intro">
+                    <div class="intro-imagem">
+                        <img
+                            src="../imagens/sudoku.png"
+                            alt="Screenshot do Jogo Sudoku"
+                            class="img-destaque"
+                        />
+                    </div>
+                    <div class="intro-texto">
+                        <p>
+                            Um projeto focado em algoritmos e estruturas de dados para resolver e gerar puzzles de Sudoku. A lógica, escrita em C e compilada para WebAssembly (Wasm), oferece um jogo interativo e moderno diretamente no navegador.
+                            Experimente a eficiência do backtracking e a interface responsiva que permite anotações, modo lápis e validação de jogadas.
+                        </p>
+                        <section class="projeto-skills">
+                            <h2>Tecnologias Utilizadas</h2>
+                            <div class="skills-line">
+                                <a href="#"><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
+                                <a href="#"><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
+                                <a href="#"><img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"></a>
+                                <a href="#"><img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C"></a>
+                                <a href="#"><img src="https://img.shields.io/badge/WebAssembly-654FF0?style=for-the-badge&logo=webassembly&logoColor=white" alt="WebAssembly"></a>
+                                <a href="#"><img src="https://img.shields.io/badge/Emscripten-143?style=for-the-badge&logo=c&logoColor=white" alt="Emscripten"></a>
+                            </div>
+                        </section>
+                        <section class="projeto-futuro">
+                            <h2>Jogue Agora!</h2>
+                            <p>
+                                Acesse a plataforma para jogar Sudoku e desafiar-se com diferentes níveis de dificuldade.
+                            </p>
+                            <a href="https://thadeu-ct.github.io/sudoku" target="_blank" class="btn-acessar">
+                                <i class="fa-solid fa-gamepad"></i> Jogue Agora
+                            </a>
+                        </section>
+                    </div>
+                </section>
+            </main>
         <div id="footer"></div>
     </div>
-
     <script>
-        async function loadComponent(id, file) {
-            const res = await fetch(file);
-            const html = await res.text();
-            document.getElementById(id).innerHTML = html;
-        }
-
-        loadComponent("header", "../componentes/header-proj.html");
-        loadComponent("conteudo-principal", "../componentes/em-construcao.html");
+      async function loadComponent(id, file) {
+        const res = await fetch(file);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        loadComponent("header", "../componentes/header-proj.html"); // Carrega o header de projeto
         loadComponent("footer", "../componentes/footer.html");
+      });
     </script>
-</body>
+    <script>
+        (() => {
+            const canvas = document.getElementById("sudoku-grid-bg");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            const GRID_COLOR = "rgba(100, 116, 139, 0.2)";
+            const BLOCK_COLOR = "rgba(100, 116, 139, 0.4)";
+            const NUMBER_COLOR = "rgba(150, 160, 190, 1)";
+            const FADE_TIME = 1500; 
+            const DISPLAY_TIME = 7000;
+            const puzzles = [
+                [
+                    [5,3,4,6,7,8,9,1,2],
+                    [6,7,2,1,9,5,3,4,8],
+                    [1,9,8,3,4,2,5,6,7],
+                    [8,5,9,7,6,1,4,2,3],
+                    [4,2,6,8,5,3,7,9,1],
+                    [7,1,3,9,2,4,8,5,6],
+                    [9,6,1,5,3,7,2,8,4],
+                    [2,8,7,4,1,9,6,3,5],
+                    [3,4,5,2,8,6,1,7,9]
+                ],
+                [
+                    [8,5,7,3,6,9,2,1,4],
+                    [9,2,3,8,1,4,6,5,7],
+                    [4,1,6,2,5,7,8,9,3],
+                    [6,8,4,7,2,1,5,3,9],
+                    [7,9,2,4,3,5,1,6,8],
+                    [5,3,1,9,8,6,4,7,2],
+                    [3,4,5,6,7,8,9,2,1],
+                    [2,6,9,1,4,3,7,8,5],
+                    [1,7,8,5,9,2,3,4,6]
+                ],
+                [
+                    [1,5,2,4,8,9,3,7,6],
+                    [7,3,9,2,5,6,8,4,1],
+                    [4,6,8,3,7,1,2,9,5],
+                    [3,8,7,1,2,4,6,5,9],
+                    [5,9,1,7,6,3,4,2,8],
+                    [2,4,6,8,9,5,7,1,3],
+                    [9,1,4,6,3,7,5,8,2],
+                    [6,2,5,9,4,8,1,3,7],
+                    [8,7,3,5,1,2,9,6,4]
+                ]
+            ];
+            
+            let w, h, cellSize;
+            let currentPuzzleIndex = 0;
+            let lastSwitchTime = 0;
+            let state = "fading_in";
+
+            function resize() {
+                const dpr = window.devicePixelRatio || 1;
+                w = window.innerWidth;
+                h = window.innerHeight;
+                canvas.width = w * dpr;
+                canvas.height = h * dpr;
+                ctx.scale(dpr, dpr);
+                cellSize = (Math.min(w, h) / 9 + Math.max(w, h) / 9) / 2;
+            }
+
+            function drawGrid() {
+                ctx.strokeStyle = GRID_COLOR;
+                ctx.lineWidth = 1;
+
+                for (let i = 0; i <= 9; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, i * cellSize);
+                    ctx.lineTo(w, i * cellSize);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(i * cellSize, 0);
+                    ctx.lineTo(i * cellSize, h);
+                    ctx.stroke();
+                }
+
+                ctx.strokeStyle = BLOCK_COLOR;
+                ctx.lineWidth = 3;
+                for (let i = 0; i <= 9; i += 3) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, i * cellSize);
+                    ctx.lineTo(w, i * cellSize);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(i * cellSize, 0);
+                    ctx.lineTo(i * cellSize, h);
+                    ctx.stroke();
+                }
+            }
+
+            function drawNumbers(puzzle, alpha) {
+                ctx.fillStyle = NUMBER_COLOR;
+                ctx.font = `${cellSize * 0.6}px 'Arial'`;
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.globalAlpha = alpha;
+
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        const num = puzzle[i][j];
+                        if (num !== 0) {
+                            ctx.fillText(num, j * cellSize + cellSize / 2, i * cellSize + cellSize / 2);
+                        }
+                    }
+                }
+                ctx.globalAlpha = 1;
+            }
+
+            function loop(timestamp) {
+                if (!lastSwitchTime) lastSwitchTime = timestamp;
+                const elapsedTime = timestamp - lastSwitchTime;
+                
+                let alpha = 0;
+
+                if (state === "fading_in") {
+                    alpha = Math.min(1, elapsedTime / FADE_TIME);
+                    if (alpha >= 1) {
+                        state = "displaying";
+                        lastSwitchTime = timestamp;
+                    }
+                } else if (state === "displaying") {
+                    alpha = 1;
+                    if (elapsedTime > DISPLAY_TIME) {
+                        state = "fading_out";
+                        lastSwitchTime = timestamp;
+                    }
+                } else if (state === "fading_out") {
+                    alpha = Math.max(0, 1 - (elapsedTime / FADE_TIME));
+                    if (alpha <= 0) {
+                        state = "fading_in";
+                        lastSwitchTime = timestamp;
+                        currentPuzzleIndex = (currentPuzzleIndex + 1) % puzzles.length;
+                    }
+                }
+
+                ctx.clearRect(0, 0, w, h);
+                drawGrid();
+                drawNumbers(puzzles[currentPuzzleIndex], alpha);
+
+                requestAnimationFrame(loop);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            requestAnimationFrame(loop);
+        })();
+    </script>
+  </body>
 </html>
