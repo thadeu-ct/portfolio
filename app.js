@@ -132,6 +132,37 @@ async function renderAtividades() {
   container.innerHTML = projetos.map(p => projetoCardHTML(p, skills)).join("");
 }
 
+/**
+ * Corrige os caminhos absolutos para funcionarem no ambiente de desenvolvimento local (localhost).
+ * Esta função detecta se o site está rodando em 'localhost' e remove o prefixo '/portfolio'
+ * dos links, que só é necessário no GitHub Pages.
+ */
+function corrigirCaminhosParaLocalhost() {
+  // Se o hostname NÃO for 'localhost', a função para aqui e não faz nada.
+  if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return;
+  }
+
+  console.log("Ambiente local detectado. Corrigindo caminhos...");
+
+  const prefixo = '/portfolio';
+  
+  // Encontra todos os links <a> e imagens <img> cujos caminhos começam com '/portfolio'
+  const elementos = document.querySelectorAll(`a[href^="${prefixo}"], img[src^="${prefixo}"]`);
+
+  elementos.forEach(el => {
+    if (el.hasAttribute('href')) {
+      const caminhoAntigo = el.getAttribute('href');
+      const caminhoNovo = caminhoAntigo.substring(prefixo.length) || '/'; // Remove o prefixo
+      el.setAttribute('href', caminhoNovo);
+    }
+    if (el.hasAttribute('src')) {
+      const caminhoAntigo = el.getAttribute('src');
+      const caminhoNovo = caminhoAntigo.substring(prefixo.length); // Remove o prefixo
+      el.setAttribute('src', caminhoNovo);
+    }
+  });
+}
 // ===================================================================
 // 5. CONTROLE DE CLIQUES (Conexão com Banco de Dados)
 // ===================================================================
@@ -170,10 +201,20 @@ function bindCliqueTracking() {
 
 // Espera o carregamento do domínio antes de iniciar as funções de renderização.
 document.addEventListener("DOMContentLoaded", () => {
+  corrigirCaminhosParaLocalhost();
   bindCliqueTracking();
   renderHome();
   renderAtividades();
   
+  const menuHamburguer = document.getElementById('menu-hamburguer');
+  const navbarPrincipal = document.getElementById('navbar-principal');
+
+  if (menuHamburguer && navbarPrincipal) {
+    menuHamburguer.addEventListener('click', () => {
+      navbarPrincipal.classList.toggle('ativo'); 
+    });
+  }
+
    if (document.getElementById("current-year")) {
     document.getElementById("current-year").textContent = new Date().getFullYear();
   }
