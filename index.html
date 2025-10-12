@@ -4,8 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Thadeu Cavalcanti | Portifólio</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link 
+            rel="stylesheet" 
+            href="style.css"
+        />
     </head>
     <body>
         <div class="container">
@@ -17,21 +23,23 @@
                         Sou Thadeu Cavalcanti, estudante de Engenharia da Computação na PUC-Rio, apaixonado por tecnologia, inovação e por transformar ideias em soluções práticas. Aqui você encontra alguns dos meus projetos,
                         certificações e um pouco mais sobre minha trajetória.
                     </p>
-                    <div class="photo-wrapper">
-                        <img src="imagens/Foto Perfil.jpg" alt="Thadeu Cavalcanti" class="blended-photo">
+                    <div class="foto-perfil-container">
+                        <img 
+                            src="imagens/Foto Perfil.jpg" 
+                            alt="Thadeu Cavalcanti" 
+                            class="foto-perfil-img"
+                        >
                     </div>
                 </section>
                 <section class="cards-container">
                     <a href="atividades.html" class="card">
                         <h3>Atividades</h3>
-                        <p>Explore projetos e atividades que representam minha trajetória e aplicação prática da tecnologia.</p>
+                        <p>Explore meus projetos, atividades e experiências práticas.</p>
                     </a>
-
                     <a href="certificados.html" class="card">
                         <h3>Certificados</h3>
                         <p>Alguns cursos e formações que concluí ao longo da minha jornada.</p>
                     </a>
-
                     <a href="sobre-mim.html" class="card">
                         <h3>Sobre Mim</h3>
                         <p>Conheça minha trajetória, interesses e o que me motiva.</p>
@@ -44,7 +52,6 @@
                         Essa experiência tem sido enriquecedora, permitindo-me compartilhar conhecimento e aprimorar minhas habilidades técnicas.
                     </p>
                 </section>
-
                 <section class="atividade-section">
                     <h3>RioBotz</h3>
                     <p>
@@ -52,34 +59,31 @@
                         Aqui estão algumas conquistas da equipe desde a minha entrada:
                     </p>
                 </section>
-                <section class="atividade-section-carousel">
-                    <div class="coverflow-carousel-container" id="riobotz-carousel">
-                        <div class="coverflow-carousel-track"> </div>
-                        <button class="carousel-button prev-button">&lt;</button>
-                        <button class="carousel-button next-button">&gt;</button>
+                <section class="atividade-section-carrossel">
+                    <div class="coverflow-carrossel-container" id="riobotz-carrossel">
+                        <div class="coverflow-carrossel-track"> </div>
+                        <button class="carrossel-button prev-button">&lt;</button>
+                        <button class="carrossel-button prox-button">&gt;</button>
                     </div>
                 </section>
                 <section class="destaques-home">
                     <h2>Projetos em Destaque</h2>
-                    <div id="projetos-home" class="preview-cards">
-                    </div>
+                    <div id="projetos-home" class="card-preview"></div>
                 </section>
             </main>
             <div id="footer"></div>
         </div>
 
         <script src="app.js" defer></script>
-        <script src="carousel.js" defer></script>
+        <script src="carrossel.js" defer></script>
         <script>
-            async function loadComponent(id, file) {
-                const res = await fetch(file);
-                const html = await res.text();
+            async function carregaComponente({id, componente}) {
+                const arq = await fetch(componente);
+                const html = await arq.text();
                 document.getElementById(id).innerHTML = html;
             }
-
-            loadComponent("header", "componentes/header.html");
-            loadComponent("footer", "componentes/footer.html");
+            carregaComponente( {id: "header", componente: "componentes/header.html"});
+            carregaComponente( {id: "footer", componente: "componentes/footer.html"});
         </script>
-
     </body>
 </html>

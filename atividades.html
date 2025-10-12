@@ -8,17 +8,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link 
+      rel="stylesheet"
+      href="style.css"
+    />
   </head>
   <body>
     <div class="container">
       <div id="header"></div>
-
       <main class="atividades">
-        <h2>Minhas Atividades</h2>
-        <p class="intro-atividades">
-          Aqui estão algumas das principais experiências e projetos que marcaram minha trajetória acadêmica e prática em tecnologia.
-        </p>
+        <section class="atividade-section">
+          <h2>Minhas Atividades</h2>
+          <p class="intro-atividades">
+            Aqui estão algumas das principais experiências e projetos que marcaram minha trajetória acadêmica e prática em tecnologia.
+          </p>
+        </section>
         <section class="atividade-section">
           <h3>Monitoria de Programação em C</h3>
           <p>
@@ -32,12 +36,13 @@
               Parte da maior equipe de robótica de combate do mundo, onde atuo na manutenção e no desenvolvimento de projetos eletrônicos.
               Aqui estão algumas conquistas da equipe desde a minha entrada:
           </p>
-
-          <div class="coverflow-carousel-container" id="riobotz-carousel">
-              <div class="coverflow-carousel-track"> </div>
-              <button class="carousel-button prev-button">&lt;</button>
-              <button class="carousel-button next-button">&gt;</button>
-          </div>
+          <section class="atividade-section-carrossel">
+            <div class="coverflow-carrossel-container" id="riobotz-carrossel">
+                <div class="coverflow-carrossel-track"> </div>
+                <button class="carrossel-button prev-button">&lt;</button>
+                <button class="carrossel-button prox-button">&gt;</button>
+            </div>
+          </section>
         </section>
         <section class="atividade-section">
           <h3>Projetos</h3>
@@ -47,21 +52,19 @@
           <div id="projetos-atividades" class="grid-cards"></div>
         </section>
       </main>
-
       <div id="footer"></div>
     </div>
 
     <script src="app.js" defer></script>
-    <script src="carousel.js" defer></script>
+    <script src="carrossel.js" defer></script>
     <script>
-      async function loadComponent(id, file) {
-        const res = await fetch(file);
-        const html = await res.text();
-        document.getElementById(id).innerHTML = html;
-      }
-
-      loadComponent("header", "componentes/header.html");
-      loadComponent("footer", "componentes/footer.html");
-    </script>
+            async function carregaComponente({id, componente}) {
+                const arq = await fetch(componente);
+                const html = await arq.text();
+                document.getElementById(id).innerHTML = html;
+            }
+            carregaComponente( {id: "header", componente: "componentes/header.html"});
+            carregaComponente( {id: "footer", componente: "componentes/footer.html"});
+        </script>
   </body>
 </html>

@@ -71,6 +71,10 @@
     "icon": "fa-solid fa-database",
     "color": "#00E599"
   },
+  "Node.js": {
+    "icon": "fa-brands fa-node-js",
+    "color": "#6DA55F"
+  },
   "Python": {
     "icon": "fa-brands fa-python",
     "color": "#3776AB"

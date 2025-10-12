@@ -17,10 +17,12 @@ Este projeto foi construído utilizando tecnologias web fundamentais, com foco e
   <a href="#"><img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git"></a>
 </p>
 
-##🚀 Principais Features e Aprendizados
-Arquitetura Modular: O site foi estruturado com componentes reutilizáveis (como header e footer), que são carregados dinamicamente com JavaScript. Isso evita a repetição de código e facilita a manutenção.</br>
-Manipulação do DOM com JavaScript Puro: Todo o projeto foi uma oportunidade para praticar a manipulação de elementos da página, criando a interatividade de uma Single Page Application (SPA) sem o uso de frameworks.</br>
-Roteamento Simples: Implementação de uma lógica de carregamento de páginas que atualiza o conteúdo principal sem a necessidade de recarregar o site inteiro.
+## 🚀 Principais Características
+- **📱 Design Responsivo:** O layout se adapta a diferentes tamanhos de tela, de desktops a celulares, utilizando **Media Queries** em CSS puro para garantir uma experiência de uso otimizada em qualquer dispositivo.
+- **🛠️ Arquitetura Modular:** O site foi estruturado com componentes reutilizáveis (header, footer), carregados dinamicamente com JavaScript para evitar a repetição de código e facilitar a manutenção.
+- **⚙️ Backend Serverless:** Implementação de uma API na Vercel com banco de dados no Neon para registrar a popularidade dos projetos, mostrando o número de cliques em tempo real (em desenvolvimento).
+- **💡 Manipulação do DOM:** Todo o projeto foi uma oportunidade para praticar a manipulação de elementos da página com JavaScript puro, criando interatividade sem o uso de frameworks.
+
 
 ## 📁 Estrutura do Projeto
 A estrutura de arquivos foi organizada de forma modular para separar as diferentes páginas, componentes reutilizáveis, scripts e recursos visuais do projeto.
@@ -32,11 +34,8 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 ├── componentes/         # Componentes HTML reutilizáveis (header, footer)
 │   ├── footer.html
 │   └── header.html
-├── img/                 # Recursos visuais (Logo, imagens de projetos, ...)
-├── index.html
-├── style.css
+├── imagens/             # Recursos visuais (Logo, imagens de projetos, ...)
 ├── projetos/            # Recursos das páginas de projetos (style-projetos.css, projetos.json, ...)
-├── README.md
 ├── app.js
 ├── atividades.html
 ├── carrossel.js
@@ -44,6 +43,7 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 ├── competicoes.json
 ├── index.html
 ├── package.json
+├── README.md
 ├── skills.json
 ├── sobre-mim.html
 ├── style.css
