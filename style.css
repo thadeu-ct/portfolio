@@ -157,8 +157,9 @@ a.logo span {
     padding-top: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(0, 195, 255, 0.2));
     z-index: 999;
+    background-color: #080c17;
   }
-
+ 
   .navbar.ativo {
     transform: translateX(225%);
   }
@@ -431,8 +432,7 @@ a.logo span {
 
   .foto-perfil-container {
     position: relative;
-    width: 40dvb;
-    margin-left: 4rem;
+    width: 50%;
     flex-shrink: 0;
   }
 

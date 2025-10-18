@@ -1,25 +1,15 @@
-// ===================================================================
+// ==============================
 // CONFIGURAÇÕES GLOBAIS
-// ===================================================================
-
-// URLs dos arquivos de dados (JSON)
+// ==============================
 const PROJETOS_URL = "projetos/projetos.json";
 const SKILLS_URL = "skills.json";
-
-// Define quantos projetos (além do "novo") aparecerão na vitrine da home.
 const TOP_PROJETOS = 7; 
 
-// Objeto global (dicionario) para as skills. Evita carregar o JSON várias vezes.
 let skillsMap = {}; 
 
-// ===================================================================
-// 1. CARREGAMENTO DOS DADOS (JSON)
-// ===================================================================
-
-/**
- * Carrega a lista de projetos do arquivo projetos.json e mescla com os cliques do banco de dados.
- * Retorna Uma lista com todos os objetos de projeto.
- */
+// ==============================
+// CARREGAMENTO DOS DADOS (JSON)
+// ==============================
 async function loadProjetos() {
   const projetosRes = await fetch(PROJETOS_URL, { cache: "no-store" });
   const dataProjetos = await projetosRes.json();
@@ -36,10 +26,6 @@ async function loadProjetos() {
   return dataProjetos.projetos;
 }
 
-/**
- * Carrega o mapa de skills do arquivo skills.json. Usa o objeto global se já foi carregado.
- * Retorna Um objeto (dicionário) com todas as skills.
- */
 async function loadSkills() {
   if (Object.keys(skillsMap).length > 0) return skillsMap;
   const res = await fetch(SKILLS_URL, { cache: "no-store" });
@@ -47,15 +33,9 @@ async function loadSkills() {
   return skillsMap;
 }
 
-// ===================================================================
-// 2. LÓGICA DA VITRINE DE DESTAQUES
-// ===================================================================
-
-/**
- * Seleciona os projetos que aparecerão na vitrine da página inicial. 
- * Utiliza lista completa de projetos como parametro.
- * Retorna uma lista contendo o projeto "novo" e os mais clicados.
- */
+// ==============================
+// LÓGICA DA VITRINE DE DESTAQUES
+// ==============================
 function pickDestaques(list) {
   const novo = list.find(p => p.novo);
   const restantes = list
@@ -66,15 +46,9 @@ function pickDestaques(list) {
   return novo ? [novo, ...restantes] : restantes;
 }
 
-// ===================================================================
-// 3. CRIAÇÃO DO HTML DOS CARDS
-// ===================================================================
-
-/**
- * Cria um único card de projeto.
- * Utiliza do projeto e do mapa de skills como parametro.
- * Retorna o código HTML do card.
- */
+// ==============================
+// CRIAÇÃO DO HTML DOS CARDS
+// ==============================
 function projetoCardHTML(p, skills) {
   let skillChipsHTML = (p.skill || []).map(s => {
     const data = skills[s] || { icon: "fa-solid fa-tag", color: "#555" };
@@ -102,13 +76,16 @@ function projetoCardHTML(p, skills) {
   `;
 }
 
-// ===================================================================
-// 4. RENDERIZAÇÃO NAS PÁGINAS
-// ===================================================================
+// ==============================
+// RENDERIZAÇÃO NAS PÁGINAS
+// ==============================
+async function carregaComponente({id, componente}) {
+    const arq = await fetch(componente);
+    const html = await arq.text();
+    document.getElementById(id).innerHTML = html;
+    return true; 
+}
 
-/**
- * Renderiza os cards de destaque na página inicial.
- */
 async function renderHome() {
   const container = document.getElementById("projetos-home");
   if (!container) return; 
@@ -119,9 +96,6 @@ async function renderHome() {
   container.innerHTML = destaques.map(p => projetoCardHTML(p, skills)).join("");
 }
 
-/**
- * Renderiza todos os cards de projeto na página de atividades.
- */
 async function renderAtividades() {
   const container = document.getElementById("projetos-atividades");
   if (!container) return; 
@@ -132,13 +106,7 @@ async function renderAtividades() {
   container.innerHTML = projetos.map(p => projetoCardHTML(p, skills)).join("");
 }
 
-/**
- * Corrige os caminhos absolutos para funcionarem no ambiente de desenvolvimento local (localhost).
- * Esta função detecta se o site está rodando em 'localhost' e remove o prefixo '/portfolio'
- * dos links, que só é necessário no GitHub Pages.
- */
 async function corrigirCaminhosParaLocalhost() {
-  // Se o hostname NÃO for 'localhost', a função para aqui e não faz nada.
   if (window.location.hostname !== '127.0.0.1' && window.location.hostname !== 'localhost') {
     return;
   }
@@ -147,26 +115,46 @@ async function corrigirCaminhosParaLocalhost() {
 
   const prefixo = '/portfolio';
   
-  // Encontra todos os links <a> e imagens <img> cujos caminhos começam com '/portfolio'
   const elementos = document.querySelectorAll(`a[href^="${prefixo}"], img[src^="${prefixo}"]`);
 
   elementos.forEach(el => {
     if (el.hasAttribute('href')) {
       const caminhoAntigo = el.getAttribute('href');
-      const caminhoNovo = caminhoAntigo.substring(prefixo.length) || '/'; // Remove o prefixo
+      const caminhoNovo = caminhoAntigo.substring(prefixo.length) || '/';
       el.setAttribute('href', caminhoNovo);
     }
     if (el.hasAttribute('src')) {
       const caminhoAntigo = el.getAttribute('src');
-      const caminhoNovo = caminhoAntigo.substring(prefixo.length); // Remove o prefixo
+      const caminhoNovo = caminhoAntigo.substring(prefixo.length);
       el.setAttribute('src', caminhoNovo);
     }
   });
 }
-// ===================================================================
-// 5. CONTROLE DE CLIQUES (Conexão com Banco de Dados)
-// ===================================================================
 
+async function inicializarComponentes() {
+    corrigirCaminhosParaLocalhost();
+    try {
+        await carregaComponente({id: "header", componente: "componentes/header.html"}); 
+        
+        const menuHamburguer = document.getElementById('menu-hamburguer');
+        const navbarPrincipal = document.getElementById('navbar-principal');
+
+        if (menuHamburguer && navbarPrincipal) {
+            menuHamburguer.addEventListener('click', function() {
+                navbarPrincipal.classList.toggle('ativo'); 
+            });
+        }
+
+        carregaComponente({id: "footer", componente: "componentes/footer.html"});
+
+    } catch (error) {
+        console.error("Erro ao carregar ou configurar componentes:", error);
+    }
+}
+
+// ==============================
+// CONTROLE DE CLIQUES (Conexão com Banco de Dados)
+// ==============================
 function contarClique(id) {
   console.log(`Enviando clique para o projeto: ${id}`);
   
@@ -195,27 +183,18 @@ function bindCliqueTracking() {
   }, { capture: true });
 }
 
-// ===================================================================
-// 6. INICIALIZAÇÃO DO SCRIPT (Init)
-// ===================================================================
-
-// Espera o carregamento do domínio antes de iniciar as funções de renderização.
+// ==============================
+// INICIALIZAÇÃO DO SCRIPT (Init)
+// ==============================
 document.addEventListener("DOMContentLoaded", function() {
-  corrigirCaminhosParaLocalhost();
   bindCliqueTracking();
+  
   renderHome();
   renderAtividades();
   
-  const menuHamburguer = document.getElementById('menu-hamburguer');
-  const navbarPrincipal = document.getElementById('navbar-principal');
-
-  if (menuHamburguer && navbarPrincipal) {
-    menuHamburguer.addEventListener('click', function() {
-      navbarPrincipal.classList.toggle('ativo'); 
-    });
-  }
-
-   if (document.getElementById("current-year")) {
+  if (document.getElementById("current-year")) {
     document.getElementById("current-year").textContent = new Date().getFullYear();
   }
+
+  inicializarComponentes();
 });
