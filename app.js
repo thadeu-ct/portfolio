@@ -137,9 +137,9 @@ async function renderAtividades() {
  * Esta função detecta se o site está rodando em 'localhost' e remove o prefixo '/portfolio'
  * dos links, que só é necessário no GitHub Pages.
  */
-function corrigirCaminhosParaLocalhost() {
+async function corrigirCaminhosParaLocalhost() {
   // Se o hostname NÃO for 'localhost', a função para aqui e não faz nada.
-  if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+  if (window.location.hostname !== '127.0.0.1' && window.location.hostname !== 'localhost') {
     return;
   }
 
@@ -200,7 +200,7 @@ function bindCliqueTracking() {
 // ===================================================================
 
 // Espera o carregamento do domínio antes de iniciar as funções de renderização.
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
   corrigirCaminhosParaLocalhost();
   bindCliqueTracking();
   renderHome();
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbarPrincipal = document.getElementById('navbar-principal');
 
   if (menuHamburguer && navbarPrincipal) {
-    menuHamburguer.addEventListener('click', () => {
+    menuHamburguer.addEventListener('click', function() {
       navbarPrincipal.classList.toggle('ativo'); 
     });
   }
