@@ -124,6 +124,7 @@ a.logo span {
     top: 0;
     left: 0;
     box-sizing: border-box;
+    background-color: #030a13;
   }
 
   .logo img {
@@ -425,14 +426,16 @@ a.logo span {
   }
 
   .apresentacao p {
-    flex: 1;
+    flex-shrink: 1;
     text-align: center;
     max-width: 100%;
   }
 
   .foto-perfil-container {
     position: relative;
-    width: 50%;
+    width: 35dvw;
+    margin-top: 3dvh;
+    margin-left: 10dvw;
     flex-shrink: 0;
   }
 
@@ -669,7 +672,12 @@ a.logo span {
 
   .card-atividade {
     width: 100%;
-    max-width: 350px;
+    max-width: 60dvw;
+  }
+
+  .coverflow-carrossel-container .card-atividade {
+    width: 35dvw; 
+    max-width: 75dvw; 
   }
 }
 

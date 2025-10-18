@@ -20,6 +20,7 @@ async function configurarCarrosselFlow({id: carrosselId}) {
     const track = carrosselContainer.querySelector('.coverflow-carrossel-track');
     const botaoPrev = carrosselContainer.querySelector('.prev-button');
     const botaoProx = carrosselContainer.querySelector('.prox-button');
+    if (!botaoPrev || !botaoProx) return;
 
     const evento = await fetch('competicoes.json');
     const dados = await evento.json();
@@ -33,21 +34,31 @@ async function configurarCarrosselFlow({id: carrosselId}) {
     let indiceAtual = Math.floor(cards.length / 2);
     let moverAutoPlay;
 
-    const positions = {
+    const posicaoPadrao = {
         '-2': { transform: 'translateX(-175%) translateY(-50%) scale(0.7)',  zIndex: 1,  opacity: 0.4 },
         '-1': { transform: 'translateX(-125%) translateY(-50%) scale(0.9)',  zIndex: 5,  opacity: 0.7 },
          '0': { transform: 'translateX(-50%)  translateY(-50%) scale(1.15)', zIndex: 10, opacity: 1.0 },
          '1': { transform: 'translateX(25%)   translateY(-50%) scale(0.9)',  zIndex: 5,  opacity: 0.7 },
          '2': { transform: 'translateX(75%)   translateY(-50%) scale(0.7)',  zIndex: 1,  opacity: 0.4 }
     };
+
+    const posicaoResponsiva = {
+        '-1': { transform: 'translateX(-110%) translateY(-50%) scale(0.8)', zIndex: 5, opacity: 0.5 }, // Esquerda "espiando"
+         '0': { transform: 'translateX(-50%)  translateY(-50%) scale(1.1)', zIndex: 10, opacity: 1 },   // Centro (um pouco menor)
+         '1': { transform: 'translateX(10%)   translateY(-50%) scale(0.8)', zIndex: 5, opacity: 0.5 }  // Direita "espiando"
+    };
+
     const hiddenStyle = { transform: 'scale(0.5)', zIndex: 0, opacity: 0 };
 
     function atualizaCarrossel() {
+        const responsivo = window.innerWidth <= 768;
+        const posicaoAtual = responsivo ? posicaoResponsiva : posicaoPadrao;
+
         cards.forEach((card, index) => {
             let diff = index - indiceAtual;
             if (diff < -Math.floor(cards.length / 2)) diff += cards.length;
             if (diff > Math.floor(cards.length / 2)) diff -= cards.length;
-            const style = positions[diff] || hiddenStyle;
+            const style = posicaoAtual[diff] || hiddenStyle;
             card.style.transform = style.transform;
             card.style.zIndex = style.zIndex;
             card.style.opacity = style.opacity;
