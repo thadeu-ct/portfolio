@@ -4,28 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PacMan | Do Virtual ao Real</title>
-
-    <!-- css global -->
+    <link icon="/portfolio/imagens/Logo_Thadeu.png">
     <link rel="stylesheet" href="../style.css" />
-    <!-- css especial de projetos -->
     <link rel="stylesheet" href="style-projetos.css" />
-    <!-- fontawesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      /* canvas como fundo */
       #pacman-led-bg {
         position: fixed;
         inset: 0;
-        z-index: -1; /* fica atrás do conteúdo */
+        z-index: -1;
         display: block;
       }
     </style>
   </head>
   <body class="pacman-bg">
-    <!-- canvas de LEDs de fundo -->
     <canvas id="pacman-led-bg" aria-hidden="true"></canvas>
 
     <div class="container">
@@ -40,7 +35,6 @@
           implementação de um sistema de controle visual via Python.
         </p>
 
-        <!-- Vídeo -->
         <section class="projeto-video">
           <h2>Vídeo de Demonstração</h2>
           <div class="video-container">
@@ -62,7 +56,6 @@
       <div id="footer"></div>
     </div>
 
-    <!-- carregamento dos componentes -->
     <script>
       async function loadComponent(id, file) {
         const res = await fetch(file);
@@ -74,8 +67,6 @@
         loadComponent("footer", "../componentes/footer.html");
       });
     </script>
-
-    <!-- animação dos LEDs -->
     <script>
       (() => {
         const canvas = document.getElementById("pacman-led-bg");
@@ -85,7 +76,6 @@
         const COLS = 15, ROWS = 10;
         let W = 0, H = 0, CELL = 0, ORIGIN_X = 0, ORIGIN_Y = 0;
 
-        // sempre começam amarelos fortes
         const trail = Array.from({ length: ROWS }, () =>
           Array.from({ length: COLS }, () => ({ r: 255, g: 235, b: 59, a: 0.9 }))
         );
