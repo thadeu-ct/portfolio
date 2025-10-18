@@ -52,6 +52,7 @@ function pickDestaques(list) {
 function projetoCardHTML(p, skills) {
   let skillChipsHTML = (p.skill || []).map(s => {
     const data = skills[s] || { icon: "fa-solid fa-tag", color: "#555" };
+    const textColor = data.color === '#000000' ? '#FFFFFF' : data.color;
     return `<span class="skill-chip" style="background:${data.color}20; color:${data.color}">
               <i class="${data.icon}"></i> ${s}
             </span>`;
