@@ -155,7 +155,7 @@ a.logo span {
     padding-right: 1dvw;
     height: 30dvh;
     background: #080c17;
-    transform: translateX(150%);
+    transform: translateX(0%);
     transition: transform 0.3s ease-in-out;
     padding-top: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(0, 195, 255, 0.2));
