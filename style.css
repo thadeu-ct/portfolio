@@ -150,7 +150,7 @@ a.logo span {
     position: fixed;
     top: 4rem;
     left: 3rem;
-    width: fit-content;
+    width: calc(fit-content + 2dvw);
     height: 30dvh;
     background: #080c17;
     transform: translateX(350%);
