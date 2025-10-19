@@ -150,7 +150,7 @@ a.logo span {
     position: fixed;
     top: 4rem;
     left: 3rem;
-    width: 30%;
+    width: 32%;
     height: 30dvh;
     background: #080c17;
     transform: translateX(350%);
@@ -162,7 +162,7 @@ a.logo span {
   }
  
   .navbar.ativo {
-    transform: translateX(200%);
+    transform: translateX(180%);
   }
 
   .navbar ul {
