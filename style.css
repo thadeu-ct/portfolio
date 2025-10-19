@@ -667,6 +667,28 @@ a.logo span {
 
 /* --- RESPONSIVO  ATIVIDADES --- */
 @media screen and (max-width: 768px) {
+  .atividades {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .atividades .atividade-section,
+  .atividades .atividade-section-carrossel {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .coverflow-carrossel-container {
+    margin-top: 2rem;
+  }
+
+  .coverflow-carrossel-container .card-atividade {
+    width: 35dvw; 
+    max-width: 75dvw; 
+  }
+
   .cards-atividades {
     justify-content: center;
   }
@@ -674,11 +696,6 @@ a.logo span {
   .card-atividade {
     width: 100%;
     max-width: 60dvw;
-  }
-
-  .coverflow-carrossel-container .card-atividade {
-    width: 35dvw; 
-    max-width: 75dvw; 
   }
 }
 
