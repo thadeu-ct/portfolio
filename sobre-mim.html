@@ -59,9 +59,7 @@
             versionamento e teste.
           </p>
 
-          <div class="skills-grid" id="skills-grid">
-            <!-- JS vai preencher aqui -->
-          </div>
+          <div class="skills-grid" id="skills-grid"></div>
         </section>
       </main>
       <div id="footer"></div>
@@ -98,10 +96,11 @@
         const grid = document.getElementById("skills-grid");
         grid.innerHTML = Object.entries(categorias)
           .map(([titulo, lista]) => {
-            const tag = lista
+            const chip = lista
               .map((s) => {
                 const data = skillsMap[s] || { icon: "fa-solid fa-tag", color: "#555" };
-                return `<span class="skill-tag" style="background:${data.color}20; color:${data.color}">
+                const textColor = data.color === '#000000' ? '#FFFFFF' : data.color;
+                return `<span class="skill-tag" style="background:${data.color}20; color:${textColor}">
                           <i class="${data.icon}"></i> ${s}
                         </span>`;
               })
