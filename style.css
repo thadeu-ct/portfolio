@@ -785,11 +785,32 @@ a.logo span {
 .cert-card h3 {
   color: #ffffff;
   margin: 0.5rem 0;
+  text-decoration: none;
 }
 
 .cert-card p {
   color: #cbd5e1;
   font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.cert-card-link {
+  color: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr; 
+  gap: 1.2rem;
+  align-items: center;
+  text-decoration: none !important;
+}
+
+.cert-card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 195, 255, 0.5);
+}
+
+.cert-card-link:hover .cert-texto h3,
+.cert-card-link:hover .cert-texto p {
+  color: inherit;
 }
 
 .cert-card:hover {
