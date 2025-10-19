@@ -149,13 +149,15 @@ a.logo span {
   .navbar {
     position: fixed;
     top: 4rem;
-    left: 3rem;
-    width: 28%;
-    height: 30dvh;
+    right: 0;
+    width: fit-content;
+    min-width: 5dvw;
+    height: auto;
+    padding-top: 2dvh;
+    padding-bottom: 2dvh;
     background: #080c17;
     transform: translateX(350%);
     transition: transform 0.3s ease-in-out;
-    padding-top: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(0, 195, 255, 0.2));
     z-index: 999;
     background-color: #080c17;
