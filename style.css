@@ -150,12 +150,10 @@ a.logo span {
     position: fixed;
     top: 4rem;
     left: 3rem;
-    width: fit-content;
-    padding-left: 1dvw;
-    padding-right: 1dvw;
+    width: 30%;
     height: 30dvh;
     background: #080c17;
-    transform: translateX(0%);
+    transform: translateX(350%);
     transition: transform 0.3s ease-in-out;
     padding-top: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(0, 195, 255, 0.2));
@@ -164,7 +162,7 @@ a.logo span {
   }
  
   .navbar.ativo {
-    transform: translateX(-50%);
+    transform: translateX(200%);
   }
 
   .navbar ul {
@@ -787,7 +785,6 @@ a.logo span {
 .cert-card h3 {
   color: #ffffff;
   margin: 0.5rem 0;
-  text-decoration: none;
 }
 
 .cert-card p {
