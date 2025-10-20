@@ -1104,8 +1104,8 @@ a.logo span {
 /* ---- RESPONSIVO SOBRE MIM ---- */
 @media (max-width: 768px) {
   .sobre-mim {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .skills-section { margin-top: 8dvh; }
 }
