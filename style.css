@@ -253,6 +253,7 @@ a.logo span {
     20% 90%,
     0% 45%
   );
+  z-index: -1;
 }
 
 /* ---- CARTÕES  INTERATIVOS ---- */
