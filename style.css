@@ -253,6 +253,7 @@ a.logo span {
     20% 90%,
     0% 45%
   );
+  z-index: -1;
 }
 
 /* ---- CARTÕES  INTERATIVOS ---- */
@@ -1102,6 +1103,10 @@ a.logo span {
 
 /* ---- RESPONSIVO SOBRE MIM ---- */
 @media (max-width: 768px) {
+  .sobre-mim {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .skills-section { margin-top: 8dvh; }
 }
 

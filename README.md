@@ -3,7 +3,8 @@ Este é o meu cartão de visitas digital, onde apresento minha jornada como dese
 
 **[🔗 Acesse a plataforma](https://thadeu-ct.github.io/portfolio)**
 
-<img width="1761" height="870" alt="image" src="https://github.com/user-attachments/assets/4560bb4e-9c17-4a2b-b43e-6ba8c69c574e" />
+<img width="800" height="407" alt="image" src="https://github.com/user-attachments/assets/55680c71-08bd-4668-82d1-c537c087c372" />
+
 
 ## ✨ Tecnologias Utilizadas
 Este projeto foi construído utilizando tecnologias web fundamentais, com foco em um código limpo, semântico e sem a necessidade de frameworks, garantindo performance e manutenibilidade.
@@ -20,7 +21,7 @@ Este projeto foi construído utilizando tecnologias web fundamentais, com foco e
 ## 🚀 Principais Características
 - **📱 Design Responsivo:** O layout se adapta a diferentes tamanhos de tela, de desktops a celulares, utilizando **Media Queries** em CSS puro para garantir uma experiência de uso otimizada em qualquer dispositivo.
 - **🛠️ Arquitetura Modular:** O site foi estruturado com componentes reutilizáveis (header, footer), carregados dinamicamente com JavaScript para evitar a repetição de código e facilitar a manutenção.
-- **⚙️ Backend Serverless:** Implementação de uma API na Vercel com banco de dados no Neon para registrar a popularidade dos projetos, mostrando o número de cliques em tempo real (em desenvolvimento).
+- **⚙️ Backend Serverless:** Implementação de uma API na Vercel com banco de dados no Neon para registrar a popularidade dos projetos, mostrando o número de cliques em tempo real.
 - **💡 Manipulação do DOM:** Todo o projeto foi uma oportunidade para praticar a manipulação de elementos da página com JavaScript puro, criando interatividade sem o uso de frameworks.
 
 
@@ -32,10 +33,13 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 │   └── get-clique.js
 ├── arquivos/            # arquivos baixáveis (CV, relatório, ...)
 ├── componentes/         # Componentes HTML reutilizáveis (header, footer)
+│   ├── em-construcao.html
 │   ├── footer.html
+│   ├── header-proj.html
 │   └── header.html
 ├── imagens/             # Recursos visuais (Logo, imagens de projetos, ...)
 ├── projetos/            # Recursos das páginas de projetos (style-projetos.css, projetos.json, ...)
+├── README.md
 ├── app.js
 ├── atividades.html
 ├── carrossel.js
@@ -43,7 +47,6 @@ A estrutura de arquivos foi organizada de forma modular para separar as diferent
 ├── competicoes.json
 ├── index.html
 ├── package.json
-├── README.md
 ├── skills.json
 ├── sobre-mim.html
 ├── style.css
