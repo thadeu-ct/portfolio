@@ -22,8 +22,8 @@ async function loadProjetos() {
       p.cliques = mapaDeCliques[p.id];
     }
   });
-
-  return dataProjetos.projetos;
+  
+  return dataProjetos.projetos.filter(p => p["no-ar"] === true);
 }
 
 async function loadSkills() {

@@ -7,7 +7,8 @@
             "skill": ["C", "Estruturas de Dados"],
             "link": "huffman.html",
             "cliques": 0,
-            "novo": false
+            "novo": false,
+            "no-ar": false
         },
         {
             "id": "ordenacao",
@@ -16,7 +17,8 @@
             "skill": ["C", "Estruturas de Dados"],
             "link": "ordenacao.html",
             "cliques": 0,
-            "novo": false
+            "novo": false,
+            "no-ar": false
         },
         {
             "id": "arvore-b",
@@ -25,7 +27,8 @@
             "skill": ["C", "Estruturas de Dados"],
             "link": "arvore-b.html",
             "cliques": 0,
-            "novo": false
+            "novo": false,
+            "no-ar": false
         },
         {
             "id": "grafo",
@@ -34,7 +37,8 @@
             "skill": ["C", "Estruturas de Dados"],
             "link": "grafo.html",
             "cliques": 0,
-            "novo": false
+            "novo": false,
+            "no-ar": false
         },
         {
             "id": "sudoku",
@@ -43,7 +47,8 @@
             "skill": ["C", "CSS", "Emscripten", "HTML", "JavaScript", "WebAssembly"],
             "link": "sudoku.html",
             "cliques": 0,
-            "novo": true
+            "novo": true,
+            "no-ar": true
         },
         {
             "id": "aerogerador",
@@ -52,7 +57,8 @@
             "skill": ["SolidWorks", "Documentação"],
             "link": "aerogerador.html",
             "cliques": 0,
-            "novo": false
+            "novo": false,
+            "no-ar": true
         },
         {
             "id": "pacman",
@@ -61,7 +67,8 @@
             "skill": ["Arduino", "C", "Eletrônica", "Python"],
             "link": "pacman.html",
             "cliques": 0,
-            "novo": false
+            "novo": false,
+            "no-ar": true
         }
     ]
 }
